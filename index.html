@@ -1,926 +1,953 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmer Moon - Developer Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmer Moon - Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-      html {
-        scroll-behavior: smooth;
-      }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
 
-      body {
-        background-color: rgb(4, 4, 36);
-        color: white;
-        font-family: "Poppins", sans-serif;
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
+    body {
+      background-color: rgb(4, 4, 36);
+      color: white;
+      font-family: "Poppins", sans-serif;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      height: 80px;
+      background-color: rgb(26, 26, 80);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 23px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav ul li a:hover {
+      color: rgb(153, 153, 226);
+      font-size: 1.01rem;
+    }
+
+    main hr {
+      border: 0;
+      background: #9c97f1;
+      height: 1.2px;
+      margin: 60px 84px;
+    }
+
+    .left {
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .firstSection {
+      display: flex;
+      justify-content: space-around;
+      margin: 130px 0;
+      margin-left: 70px;
+    }
+
+    .firstSection>div {
+      width: 35%;
+    }
+
+    .leftSection {
+      font-size: 2.3rem;
+      /* instead of 2.8rem */
+      line-height: 1.4;
+      /* optional: makes spacing nicer */
+    }
+
+    .leftSection .buttons {
+      padding: 50px 0;
+    }
+
+    .leftSection .btn {
+      padding: 12px;
+      background: #1e2167;
+      color: white;
+      border: 2px solid white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .rightSection img {
+      width: 80%;
+      position: relative;
+      top: -50px;
+      /* moves image UP */
+      left: 10px;
+      /* moves image RIGHT */
+    }
+
+    .purple {
+      color: rgb(170, 107, 228);
+    }
+
+    .text-gray {
+      color: gray;
+    }
+
+    #element {
+      color: rgb(170, 107, 228);
+    }
+
+    /* Social Links */
+    .social-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-start;
+      /* align left */
+      gap: 30px;
+      /* equal spacing */
+      margin-left: 10px;
+      /* shift entire row to align with resume button */
+    }
+
+    .social-links a {
+      font-size: 1.8rem;
+      transition: transform 0.3s;
+    }
+
+    /* Brand Colors */
+    .social-links a:nth-child(1) {
+      color: #0a66c2;
+    }
+
+    /* LinkedIn */
+    .social-links a:nth-child(2) {
+      color: #e1306c;
+    }
+
+    /* Instagram */
+    .social-links a:nth-child(3) {
+      color: #010101;
+    }
+
+    /* TikTok */
+    .social-links a:nth-child(4) {
+      color: #1877f2;
+    }
+
+    /* Facebook */
+    .social-links a:nth-child(5) {
+      color: #ff0000;
+    }
+
+    /* YouTube */
+    .social-links a:nth-child(6) {
+      color: #333;
+    }
+
+    /* GitHub */
+
+    .social-links a:hover {
+      transform: scale(1.2);
+    }
+
+    .secondSection {
+      min-width: 80vh;
+      margin: auto;
+      height: 80vh;
+      margin-left: 150px;
+    }
+
+    .secondSection h1 {
+      font-size: 1.9rem;
+    }
+
+    /* Experience Card Styles */
+    .experience-card {
+      background: rgb(17, 17, 45);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgb(50, 50, 80);
+    }
+
+    .experience-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .experience-header img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+
+    .experience-title h3 {
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .experience-title p {
+      font-size: 1.1rem;
+      color: #9c97f1;
+      margin-bottom: 5px;
+    }
+
+    .experience-date {
+      color: gray;
+      font-size: 0.9rem;
+    }
+
+    .experience-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ccc;
+      padding-top: 15px;
+      border-top: 1px solid rgb(50, 50, 80);
+    }
+
+    /* Certificate Button Styles */
+    .certificate-btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .certificate-btn:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .certificate-btn i {
+      margin-right: 8px;
+    }
+
+    /* Projects Section */
+    #projects {
+      padding: 60px 0;
+      background: rgb(15, 15, 35);
+      text-align: center;
+    }
+
+    #projects .section-title {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: white;
+      position: relative;
+      display: inline-block;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: rgb(17, 17, 45);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      text-decoration: none;
+      color: #fff;
+      background: #007bff;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .project-card a:hover {
+      background: #0056b3;
+    }
+
+    .aboutSection {
+      padding: 80px 120px;
+      background-color: rgb(17, 17, 51);
+      text-align: center;
+      /* center text */
+    }
+
+    .aboutSection h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .aboutSection p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto;
+      /* center block */
+    }
+
+    .contactSection {
+      padding: 80px 120px;
+      background-color: rgb(10, 10, 40);
+      color: #fff;
+      text-align: center;
+    }
+
+    .contactSection h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .contactSection p {
+      color: #ccc;
+      margin-bottom: 40px;
+    }
+
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+      text-align: left;
+    }
+
+    .contact-info p {
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+
+    .contact-info a {
+      color: #9c97f1;
+      text-decoration: none;
+    }
+
+    .contact-socials a {
+      margin-right: 15px;
+      color: #9c97f1;
+      transition: color 0.3s ease;
+    }
+
+    .contact-socials a:hover {
+      color: #fff;
+    }
+
+    .contact-form {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background: #1e2167;
+      color: white;
+      border: 2px solid #9c97f1;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #9c97f1;
+      color: #000;
+    }
+
+    footer {
+      background-color: #0e0e1a;
+      color: #ccc;
+      padding: 40px 80px;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer h3 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .footer ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer ul li a {
+      text-decoration: none;
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .footer ul li a:hover {
+      color: #9c97f1;
+    }
+
+    .footer-social a {
+      margin-right: 15px;
+      font-size: 20px;
+      color: #aaa;
+      transition: color 0.3s ease;
+    }
+
+    .footer-social a:hover {
+      color: #9c97f1;
+    }
+
+    .footer-rights {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: gray;
+      border-top: 1px solid #222;
+      padding-top: 20px;
+    }
+
+    /* Responsive Design for Tablets and Phones */
+    @media screen and (max-width: 1200px) {
       nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-        height: 80px;
-        background-color: rgb(26, 26, 80);
+        flex-direction: column;
+        height: auto;
+        padding: 15px 0;
+      }
+
+      .left {
+        margin-bottom: 15px;
       }
 
       nav ul {
-        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
       }
 
       nav ul li {
-        list-style: none;
-        margin: 0 23px;
-      }
-
-      nav ul li a {
-        text-decoration: none;
-        color: white;
-      }
-
-      nav ul li a:hover {
-        color: rgb(153, 153, 226);
-        font-size: 1.01rem;
-      }
-
-      main hr {
-        border: 0;
-        background: #9c97f1;
-        height: 1.2px;
-        margin: 60px 84px;
-      }
-
-      .left {
-        font-size: 24px;
-        font-weight: 600;
+        margin: 5px 15px;
       }
 
       .firstSection {
-        display: flex;
-        justify-content: space-around;
-        margin: 130px 0;
-        margin-left: 70px;
-      }
-
-      .firstSection > div {
-        width: 35%;
-      }
-
-      .leftSection {
-        font-size: 2.3rem; /* instead of 2.8rem */
-        line-height: 1.4; /* optional: makes spacing nicer */
-      }
-
-      .leftSection .buttons {
-        padding: 50px 0;
-      }
-
-      .leftSection .btn {
-        padding: 12px;
-        background: #1e2167;
-        color: white;
-        border: 2px solid white;
-        font-size: 20px;
-        cursor: pointer;
-      }
-
-      .rightSection img {
-        width: 80%;
-        position: relative;
-        top: -50px; /* moves image UP */
-        left: 10px; /* moves image RIGHT */
-      }
-
-      .purple {
-        color: rgb(170, 107, 228);
-      }
-
-      .text-gray {
-        color: gray;
-      }
-
-      #element {
-        color: rgb(170, 107, 228);
-      }
-
-      /* Social Links */
-      .social-links {
-        margin-top: 20px;
-        display: flex;
-        justify-content: flex-start; /* align left */
-        gap: 30px; /* equal spacing */
-        margin-left: 10px; /* shift entire row to align with resume button */
-      }
-
-      .social-links a {
-        font-size: 1.8rem;
-        transition: transform 0.3s;
-      }
-
-      /* Brand Colors */
-      .social-links a:nth-child(1) {
-        color: #0a66c2;
-      } /* LinkedIn */
-      .social-links a:nth-child(2) {
-        color: #e1306c;
-      } /* Instagram */
-      .social-links a:nth-child(3) {
-        color: #010101;
-      } /* TikTok */
-      .social-links a:nth-child(4) {
-        color: #1877f2;
-      } /* Facebook */
-      .social-links a:nth-child(5) {
-        color: #ff0000;
-      } /* YouTube */
-      .social-links a:nth-child(6) {
-        color: #333;
-      } /* GitHub */
-
-      .social-links a:hover {
-        transform: scale(1.2);
-      }
-
-      .secondSection {
-        min-width: 80vh;
-        margin: auto;
-        height: 80vh;
-        margin-left: 150px;
-      }
-
-      .secondSection h1 {
-        font-size: 1.9rem;
-      }
-
-      .secondSection .box {
-        background: white;
-        width: 77vw;
-        height: 2px;
-        margin: 56px 0;
-        display: flex; /* Add this */
-        justify-content: center; /* Optional, centers items */
-        align-items: flex-start; /* Optional, aligns top */
-      }
-
-      .secondSection .vertical {
-        height: 93px;
-        width: 1px;
-        background-color: white;
-        margin: 0 100px;
-      }
-
-      .vertical {
-        position: relative; /* so child can be positioned inside */
-        height: 93px;
-        width: 1px;
-        background-color: white;
-        margin: 0 100px;
-      }
-
-      .image-top {
-        width: 23px;
-        position: absolute;
-        top: -30px; /* moves image above the line */
-        left: -12px; /* shifts it left so it’s centered over the line */
-      }
-
-      .vertical-title {
-        position: relative;
-        top: 75px;
-        left: 3px; /* shifted 1px to the right */
-        width: 150px;
-        font-size: 14px;
-      }
-
-      .vertical-desc {
-        position: relative;
-        top: 86px;
-        width: 150px;
-        font-size: 9px;
-        color: gray;
-      }
-
-      /* Projects Section */
-      #projects {
-        padding: 60px 0;
-        background: rgb(15, 15, 35);
+        flex-direction: column-reverse;
+        margin: 80px 0;
+        margin-left: 0;
         text-align: center;
       }
 
-      #projects .section-title {
-        font-size: 2rem;
-        margin-bottom: 40px;
-        color: white;
-        position: relative;
-        display: inline-block;
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        max-width: 900px;
+      .firstSection>div {
+        width: 80%;
         margin: 0 auto;
       }
 
-      .project-card {
-        background: rgb(17, 17, 45);
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-
-      .project-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-      }
-
-      .project-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-        color: #007bff;
-      }
-
-      .project-card p {
-        font-size: 0.95rem;
-        color: white;
-        margin-bottom: 15px;
-      }
-
-      .project-card a {
-        text-decoration: none;
-        color: #fff;
-        background: #007bff;
-        padding: 8px 15px;
-        border-radius: 5px;
-        transition: background 0.3s;
-      }
-
-      .project-card a:hover {
-        background: #0056b3;
-      }
-
-      .aboutSection {
-        padding: 80px 120px;
-        background-color: rgb(17, 17, 51);
-        text-align: center; /* center text */
-      }
-
-      .aboutSection h1 {
+      .leftSection {
         font-size: 2rem;
-        margin-bottom: 20px;
-        color: #fff;
+        margin-top: 30px;
       }
 
-      .aboutSection p {
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #ccc;
-        max-width: 700px;
-        margin: 0 auto; /* center block */
+      .rightSection img {
+        width: 60%;
+        top: 0;
+        left: 0;
       }
 
-      .contactSection {
-        padding: 80px 120px;
-        background-color: rgb(10, 10, 40);
-        color: #fff;
+      .social-links {
+        justify-content: center;
+        margin-left: 0;
+      }
+
+      .secondSection {
+        margin-left: 0;
+        height: auto;
+        padding: 40px 20px;
+      }
+
+      .secondSection {
+        margin-left: 0;
+        height: auto;
+        padding: 40px 20px;
+      }
+
+      .experience-card {
+        margin: 40px 20px;
+        padding: 25px;
+      }
+
+      .experience-header {
+        flex-direction: column;
         text-align: center;
       }
 
-      .contactSection h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
+      .experience-header img {
+        margin-right: 0;
+        margin-bottom: 15px;
       }
 
-      .contactSection p {
-        color: #ccc;
-        margin-bottom: 40px;
+      .aboutSection,
+      .contactSection {
+        padding: 60px 20px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
       }
 
       .contact-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 40px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 30px;
       }
 
       .contact-info {
-        flex: 1;
-        min-width: 250px;
-        text-align: left;
-      }
-
-      .contact-info p {
-        margin-bottom: 12px;
-        font-size: 1rem;
-      }
-
-      .contact-info a {
-        color: #9c97f1;
-        text-decoration: none;
-      }
-
-      .contact-socials a {
-        margin-right: 15px;
-        color: #9c97f1;
-        transition: color 0.3s ease;
-      }
-
-      .contact-socials a:hover {
-        color: #fff;
-      }
-
-      .contact-form {
-        flex: 1;
-        min-width: 300px;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        padding: 12px;
-        border: none;
-        border-radius: 6px;
-        outline: none;
-        font-size: 1rem;
-      }
-
-      .contact-form button {
-        padding: 12px;
-        background: #1e2167;
-        color: white;
-        border: 2px solid #9c97f1;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background 0.3s ease;
-      }
-
-      .contact-form button:hover {
-        background: #9c97f1;
-        color: #000;
+        text-align: center;
       }
 
       footer {
-        background-color: #0e0e1a;
-        color: #ccc;
-        padding: 40px 80px;
+        padding: 40px 20px;
       }
 
       .footer {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 40px;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+      }
+    }
+
+    /* For screens smaller than 768px (phones) */
+    @media screen and (max-width: 768px) {
+      .firstSection>div {
+        width: 90%;
       }
 
-      .footer h3 {
-        color: #fff;
-        margin-bottom: 15px;
+      .leftSection {
+        font-size: 1.7rem;
+      }
+
+      .rightSection img {
+        width: 70%;
+      }
+
+      .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .btn {
+        width: 80%;
         font-size: 18px;
       }
 
-      .footer ul {
-        list-style: none;
-        padding: 0;
+      .social-links {
+        gap: 20px;
       }
 
-      .footer ul li {
-        margin-bottom: 8px;
+      .social-links a {
+        font-size: 1.5rem;
       }
 
-      .footer ul li a {
-        text-decoration: none;
-        color: #aaa;
-        transition: color 0.3s ease;
+      .secondSection h1 {
+        font-size: 1.7rem;
       }
 
-      .footer ul li a:hover {
-        color: #9c97f1;
+      .projects-grid {
+        gap: 15px;
       }
 
-      .footer-social a {
-        margin-right: 15px;
-        font-size: 20px;
-        color: #aaa;
-        transition: color 0.3s ease;
+      .project-card {
+        padding: 15px;
       }
 
-      .footer-social a:hover {
-        color: #9c97f1;
+      .project-card h3 {
+        font-size: 1.2rem;
       }
 
-      .footer-rights {
+      .aboutSection h1,
+      .contactSection h1 {
+        font-size: 1.8rem;
+      }
+
+      .contact-form {
+        min-width: 100%;
+      }
+
+      .experience-card {
+        margin: 30px 15px;
+        padding: 20px;
+      }
+
+      .experience-title h3 {
+        font-size: 1.3rem;
+      }
+
+      .experience-title p {
+        font-size: 1rem;
+      }
+
+      .experience-desc {
+        font-size: 0.95rem;
+      }
+
+      .certificate-btn {
+        width: 100%;
         text-align: center;
-        margin-top: 30px;
-        font-size: 14px;
-        color: gray;
-        border-top: 1px solid #222;
-        padding-top: 20px;
+        padding: 12px 20px;
       }
+    }
 
-      /* Responsive Design for Tablets and Phones */
-      @media screen and (max-width: 1200px) {
-        nav {
-          flex-direction: column;
-          height: auto;
-          padding: 15px 0;
-        }
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
 
-        .left {
-          margin-bottom: 15px;
-        }
+    .hamburger span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin-bottom: 4px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
 
-        nav ul {
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        nav ul li {
-          margin: 5px 15px;
-        }
-
-        .firstSection {
-          flex-direction: column-reverse;
-          margin: 80px 0;
-          margin-left: 0;
-          text-align: center;
-        }
-
-        .firstSection > div {
-          width: 80%;
-          margin: 0 auto;
-        }
-
-        .leftSection {
-          font-size: 2rem;
-          margin-top: 30px;
-        }
-
-        .rightSection img {
-          width: 60%;
-          top: 0;
-          left: 0;
-        }
-
-        .social-links {
-          justify-content: center;
-          margin-left: 0;
-        }
-
-        .secondSection {
-          margin-left: 0;
-          height: auto;
-          padding: 40px 20px;
-        }
-
-        .secondSection .box {
-          width: 90%;
-          margin: 40px auto;
-          flex-direction: column;
-          align-items: center;
-          height: auto;
-        }
-
-        .vertical {
-          margin: 30px 0;
-          height: auto;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          text-align: center;
-        }
-
-        .vertical-title,
-        .vertical-desc {
-          position: static;
-          width: 80%;
-          margin-top: 10px;
-        }
-
-        .vertical-desc {
-          font-size: 0.9rem;
-        }
-
-        .aboutSection,
-        .contactSection {
-          padding: 60px 20px;
-        }
-
-        .projects-grid {
-          grid-template-columns: 1fr;
-          max-width: 500px;
-        }
-
-        .contact-container {
-          flex-direction: column;
-          gap: 30px;
-        }
-
-        .contact-info {
-          text-align: center;
-        }
-
-        footer {
-          padding: 40px 20px;
-        }
-
-        .footer {
-          flex-direction: column;
-          gap: 30px;
-          text-align: center;
-        }
-      }
-
-      /* For screens smaller than 768px (phones) */
-      @media screen and (max-width: 768px) {
-        .firstSection > div {
-          width: 90%;
-        }
-
-        .leftSection {
-          font-size: 1.7rem;
-        }
-
-        .rightSection img {
-          width: 70%;
-        }
-
-        .buttons {
-          display: flex;
-          flex-direction: column;
-          gap: 15px;
-          align-items: center;
-        }
-
-        .btn {
-          width: 80%;
-          font-size: 18px;
-        }
-
-        .social-links {
-          gap: 20px;
-        }
-
-        .social-links a {
-          font-size: 1.5rem;
-        }
-
-        .secondSection h1 {
-          font-size: 1.7rem;
-        }
-
-        .projects-grid {
-          gap: 15px;
-        }
-
-        .project-card {
-          padding: 15px;
-        }
-
-        .project-card h3 {
-          font-size: 1.2rem;
-        }
-
-        .aboutSection h1,
-        .contactSection h1 {
-          font-size: 1.8rem;
-        }
-
-        .contact-form {
-          min-width: 100%;
-        }
-      }
-
-      /* Hamburger Menu */
+    /* Add to the media query for screens smaller than 768px */
+    @media screen and (max-width: 768px) {
       .hamburger {
+        display: flex;
+      }
+
+      #nav-menu {
         display: none;
         flex-direction: column;
-        cursor: pointer;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: rgb(26, 26, 80);
+        padding: 20px 0;
+        z-index: 1000;
       }
 
-      .hamburger span {
-        height: 3px;
-        width: 25px;
-        background: white;
-        margin-bottom: 4px;
-        border-radius: 5px;
-        transition: 0.3s;
+      #nav-menu.active {
+        display: flex;
       }
 
-      /* Add to the media query for screens smaller than 768px */
-      @media screen and (max-width: 768px) {
-        .hamburger {
-          display: flex;
-        }
-
-        #nav-menu {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 80px;
-          left: 0;
-          width: 100%;
-          background-color: rgb(26, 26, 80);
-          padding: 20px 0;
-          z-index: 1000;
-        }
-
-        #nav-menu.active {
-          display: flex;
-        }
-
-        nav ul li {
-          margin: 10px 0;
-          text-align: center;
-        }
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
       }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="left">Ahmer's Portfolio</div>
-        <div class="right">
-          <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <ul id="nav-menu">
-            <li><a href="">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left">Ahmer's Portfolio</div>
+      <div class="right">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </nav>
-    </header>
-    <main>
-      <section class="firstSection">
-        <div class="leftSection">
-          Hi, My name is <span class="purple">Ahmer Moon</span>
-          <div>and I am a passionate</div>
-          <span id="element"></span>
-          <div class="buttons">
-            <button
-              class="btn"
-              onclick="window.open('https://drive.google.com/file/d/1JfkZO4cow3DYU3hjQK8S3ZjEI_WY55ab/view?usp=drive_link', '_blank')"
-            >
-              Download Resume
-            </button>
-            <button
-              class="btn"
-              onclick="window.open('https://github.com/AhmerMoon')"
-            >
-              Visit Github
-            </button>
-            <!-- Social Links -->
-            <div class="social-links">
-              <a
-                href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/"
-                target="_blank"
-                ><i class="fab fa-linkedin"></i
-              ></a>
-              <a href="https://www.instagram.com/ahmermoon28/" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="https://www.tiktok.com/@ahmer287" target="_blank"
-                ><i class="fab fa-tiktok"></i
-              ></a>
-              <a
-                href="https://www.facebook.com/ahmer.moon.2025/"
-                target="_blank"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a href="https://www.youtube.com/@moongamerz826" target="_blank"
-                ><i class="fab fa-youtube"></i
-              ></a>
-              <a href="https://github.com/AhmerMoon" target="_blank"
-                ><i class="fab fa-github"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-        <div class="rightSection">
-          <img src="bg.png" alt="" />
-        </div>
-      </section>
-
-      <section class="secondSection">
-        <span class="text-gray"> What I have done so far </span>
-        <h1>Work Experience</h1>
-
-        <div class="box">
-          <div class="vertical">
-            <img class="image-top" src="developer.jpg" alt="" />
-            <div class="vertical-title">IT Intern (Aug 2025 - Sep 2025)</div>
-            <div class="vertical-desc">
-              Worked as an IT intern at Pakistan Ordnance Factories (POF), where
-              I gained hands-on experience in software development and project
-              management.
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Projects Section -->
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Projects</h2>
-        <div class="projects-grid">
-          <!-- Card 1 -->
-          <div class="project-card">
-            <h3>POF E-Services App</h3>
-            <p>A Clone of POF E-Services App made with Flutter.</p>
-            <a
-              href="https://github.com/AhmerMoon/POF_E-Services_App"
-              target="_blank"
-              >View on GitHub</a
-            >
-          </div>
-
-          <!-- Card 2 -->
-          <div class="project-card">
-            <h3>Medicine Reminder App</h3>
-            <p>A Medicine Reminder App built with Flutter and Firebase.</p>
-            <a
-              href="https://github.com/AhmerMoon/Medicine_Reminder_App"
-              target="_blank"
-              >View on GitHub</a
-            >
-          </div>
-
-          <!-- Card 3 -->
-          <div class="project-card">
-            <h3>Inventory Management System</h3>
-            <p>An Inventory Management System built in Laravel.</p>
-            <a
-              href="https://github.com/AhmerMoon/Inventory_Management_System"
-              target="_blank"
-              >View on GitHub</a
-            >
-          </div>
-
-          <!-- Card 4 -->
-          <div class="project-card">
-            <h3>Flappy Bird Game</h3>
-            <p>A Flappy Bird clone built with Windows Forms in C#.</p>
-            <a
-              href="https://github.com/AhmerMoon/Flappy-Bird-Game"
-              target="_blank"
-              >View on GitHub</a
-            >
-          </div>
-
-          <!-- Card 5 -->
-          <div class="project-card">
-            <h3>Online Auction System</h3>
-            <p>An Online Auction System built in Java.</p>
-            <a
-              href="https://github.com/AhmerMoon/Online_Auction_System"
-              target="_blank"
-              >View on GitHub</a
-            >
-          </div>
-
-          <!-- Card 6 -->
-          <div class="project-card">
-            <h3>Moon Currency Converter</h3>
-            <p>
-              A Currency Converter App built using HTML, CSS and JavaScript.
-            </p>
-            <a
-              href="https://moon-currency-converter.vercel.app/"
-              target="_blank"
-              >View Website</a
-            >
+        <ul id="nav-menu">
+          <li><a href="">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="firstSection">
+      <div class="leftSection">
+        Hi, My name is <span class="purple">Ahmer Moon</span>
+        <div>and I am a passionate</div>
+        <span id="element"></span>
+        <div class="buttons">
+          <button class="btn"
+            onclick="window.open('https://drive.google.com/file/d/1JfkZO4cow3DYU3hjQK8S3ZjEI_WY55ab/view?usp=drive_link', '_blank')">
+            Download Resume
+          </button>
+          <button class="btn" onclick="window.open('https://github.com/AhmerMoon')">
+            Visit Github
+          </button>
+          <!-- Social Links -->
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/" target="_blank"><i
+                class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/ahmermoon28/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@ahmer287" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.facebook.com/ahmer.moon.2025/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.youtube.com/@moongamerz826" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/AhmerMoon" target="_blank"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </div>
+      <div class="rightSection">
+        <img src="bg.png" alt="" />
+      </div>
     </section>
 
-    <section id="about" class="aboutSection">
-      <h1>About Me</h1>
-      <p>
-        I am <span class="purple">Ahmer Moon</span>, a 7th semester Computer
-        Science student at COMSATS University Wah Campus. I am passionate about
-        <b>AI, Web, and App Development</b>. With experience in projects ranging
-        from machine learning to full-stack development, I aim to build
-        impactful digital solutions that solve real-world problems.
-      </p>
+    <section class="secondSection">
+      <span class="text-gray">What I have done so far</span>
+      <h1>Work Experience</h1>
+
+      <div class="experience-card">
+        <div class="experience-header">
+          <img src="developer.jpg" alt="Developer" />
+          <div class="experience-title">
+            <h3>IT Intern</h3>
+            <p>Pakistan Ordnance Factories (POF)</p>
+            <span class="experience-date">Aug 2025 - Sep 2025</span>
+          </div>
+        </div>
+        <div class="experience-desc">
+          Worked as an IT intern at Pakistan Ordnance Factories (POF), where
+          I gained hands-on experience in software development and project
+          management.
+        </div>
+        <!-- Add this button - replace YOUR_CERTIFICATE_URL with actual URL -->
+        <a href="https://media.licdn.com/dms/image/v2/D5622AQHO5vQOiDXT-Q/feedshare-shrink_1280/B56ZmVgD2CHAAs-/0/1759149835355?e=1764201600&v=beta&t=jFyn1q898jvifAjeohao9ZCo9pVnagbHEcfsFhvKHvY"
+          target="_blank" class="certificate-btn">
+          <i class="fas fa-certificate"></i> View Certificate
+        </a>
+      </div>
     </section>
+  </main>
 
-    <section id="contact" class="contactSection">
-      <h1>Contact Me</h1>
-      <p>
-        If you’d like to work together or have any questions, feel free to reach
-        out.
-      </p>
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <!-- Card 1 -->
+        <div class="project-card">
+          <h3>POF E-Services App</h3>
+          <p>A Clone of POF E-Services App made with Flutter.</p>
+          <a href="https://github.com/AhmerMoon/POF_E-Services_App" target="_blank">View on GitHub</a>
+        </div>
 
-      <div class="contact-container">
-        <div class="contact-info">
+        <!-- Card 2 -->
+        <div class="project-card">
+          <h3>Medicine Reminder App</h3>
+          <p>A Medicine Reminder App built with Flutter and Firebase.</p>
+          <a href="https://github.com/AhmerMoon/Medicine_Reminder_App" target="_blank">View on GitHub</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card">
+          <h3>Inventory Management System</h3>
+          <p>An Inventory Management System built in Laravel.</p>
+          <a href="https://github.com/AhmerMoon/Inventory_Management_System" target="_blank">View on GitHub</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="project-card">
+          <h3>Flappy Bird Game</h3>
+          <p>A Flappy Bird clone built with Windows Forms in C#.</p>
+          <a href="https://github.com/AhmerMoon/Flappy-Bird-Game" target="_blank">View on GitHub</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="project-card">
+          <h3>Online Auction System</h3>
+          <p>An Online Auction System built in Java.</p>
+          <a href="https://github.com/AhmerMoon/Online_Auction_System" target="_blank">View on GitHub</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="project-card">
+          <h3>Moon Currency Converter</h3>
           <p>
-            <strong>Email:</strong>
-            <a href="mailto:ahmermoonmajid@gmail.com"
-              >ahmermoonmajid@gmail.com</a
-            >
+            A Currency Converter App built using HTML, CSS and JavaScript.
           </p>
-          <p><strong>Phone:</strong> +92 328 5077511</p>
-          <p><strong>Location:</strong> Wah Cantt, Pakistan</p>
-          <div class="contact-socials">
-            <a href="https://github.com/AhmerMoon" target="_blank">GitHub</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          </div>
+          <a href="https://moon-currency-converter.vercel.app/" target="_blank">View Website</a>
         </div>
-
-        <form class="contact-form">
-          <input type="text" placeholder="Your Name" required />
-          <input type="email" placeholder="Your Email" required />
-          <textarea placeholder="Your Message" rows="5" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <div class="footer">
-        <div class="footer-first">
-          <h3>Ahmer Moon</h3>
-          <p>
-            Aspiring AI Expert & Web/App Developer. Passionate about building
-            impactful digital solutions.
-          </p>
-        </div>
+  <section id="about" class="aboutSection">
+    <h1>About Me</h1>
+    <p>
+      I am <span class="purple">Ahmer Moon</span>, a 7th semester Computer
+      Science student at COMSATS University Wah Campus. I am passionate about
+      <b>AI, Web, and App Development</b>. With experience in projects ranging
+      from machine learning to full-stack development, I aim to build
+      impactful digital solutions that solve real-world problems.
+    </p>
+  </section>
 
-        <div class="footer-second">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
+  <section id="contact" class="contactSection">
+    <h1>Contact Me</h1>
+    <p>
+      If you’d like to work together or have any questions, feel free to reach
+      out.
+    </p>
 
-        <div class="footer-third">
-          <h3>Connect</h3>
-          <div class="footer-social">
-            <a href="https://github.com/AhmerMoon" target="_blank">GitHub</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-            <a href="mailto:youremail@example.com">Email</a>
-          </div>
+    <div class="contact-container">
+      <div class="contact-info">
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:ahmermoonmajid@gmail.com">ahmermoonmajid@gmail.com</a>
+        </p>
+        <p><strong>Phone:</strong> +92 328 5077511</p>
+        <p><strong>Location:</strong> Wah Cantt, Pakistan</p>
+        <div class="contact-socials">
+          <a href="https://github.com/AhmerMoon" target="_blank">GitHub</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
         </div>
       </div>
 
-      <div class="footer-rights">© 2025 Ahmer Moon | All Rights Reserved</div>
-    </footer>
-  </body>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-  <script>
-    var typed = new Typed("#element", {
-      strings: ["App Developer", "Web Developer"],
-      typeSpeed: 50,
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-first">
+        <h3>Ahmer Moon</h3>
+        <p>
+          Aspiring AI Expert & Web/App Developer. Passionate about building
+          impactful digital solutions.
+        </p>
+      </div>
+
+      <div class="footer-second">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-third">
+        <h3>Connect</h3>
+        <div class="footer-social">
+          <a href="https://github.com/AhmerMoon" target="_blank">GitHub</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a href="mailto:youremail@example.com">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-rights">© 2025 Ahmer Moon | All Rights Reserved</div>
+  </footer>
+</body>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+  var typed = new Typed("#element", {
+    strings: ["App Developer", "Web Developer"],
+    typeSpeed: 50,
+  });
+
+  // Add this script after your existing Typed.js script
+  document.addEventListener("DOMContentLoaded", function () {
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", function () {
+      navMenu.classList.toggle("active");
     });
 
-    // Add this script after your existing Typed.js script
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("nav-menu");
-
-      hamburger.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-      });
-
-      // Close menu when clicking on a link
-      const navLinks = document.querySelectorAll("#nav-menu a");
-      navLinks.forEach((link) => {
-        link.addEventListener("click", function () {
-          navMenu.classList.remove("active");
-        });
+    // Close menu when clicking on a link
+    const navLinks = document.querySelectorAll("#nav-menu a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("active");
       });
     });
-  </script>
+  });
+</script>
+
 </html>
