@@ -4,19 +4,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmer Moon - Developer Portfolio</title>
+  <title>Ahmer Moon | App Developer & AI Specialist</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <style>
+    /* ================= BASE STYLES ================= */
+    :root {
+      --bg-dark: #040414;
+      --primary: #764ba2;
+      --secondary: #667eea;
+      --accent: #2ec4b6;
+      --text-main: #ffffff;
+      --text-muted: #a0a5c0;
+      --glass-bg: rgba(20, 24, 48, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.08);
+      --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
     * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     html {
@@ -24,994 +42,978 @@
     }
 
     body {
-      background-color: rgb(4, 4, 36);
-      color: white;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+      position: relative;
     }
 
+    /* Ambient Background Glows */
+    body::before,
+    body::after {
+      content: '';
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: -1;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+
+    body::before {
+      background: var(--primary);
+      top: -100px;
+      left: -100px;
+    }
+
+    body::after {
+      background: var(--accent);
+      bottom: -100px;
+      right: -100px;
+    }
+
+    /* Gradient Text Utility */
+    .gradient-text {
+      background: linear-gradient(135deg, #a88beb 0%, #f8ceec 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .section-container {
+      width: min(1200px, 90%);
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      color: var(--accent);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      display: block;
+    }
+
+    /* ================= NAVBAR ================= */
     nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: space-around;
+      justify-content: space-between;
       height: 80px;
-      background-color: rgb(26, 26, 80);
+      padding: 0 5%;
+      transition: all 0.4s ease;
+    }
+
+    nav.scrolled {
+      background: rgba(4, 4, 20, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 1px;
     }
 
     nav ul {
       display: flex;
-      justify-content: center;
-    }
-
-    nav ul li {
       list-style: none;
-      margin: 0 23px;
+      gap: 30px;
     }
 
     nav ul li a {
       text-decoration: none;
-      color: white;
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: color 0.3s ease;
+      font-size: 0.95rem;
     }
 
     nav ul li a:hover {
-      color: rgb(153, 153, 226);
-      font-size: 1.01rem;
-    }
-
-    main hr {
-      border: 0;
-      background: #9c97f1;
-      height: 1.2px;
-      margin: 60px 84px;
-    }
-
-    .left {
-      font-size: 24px;
-      font-weight: 600;
-    }
-
-    .firstSection {
-      display: flex;
-      justify-content: space-around;
-      margin: 130px 0;
-      margin-left: 70px;
-    }
-
-    .firstSection>div {
-      width: 35%;
-    }
-
-    .leftSection {
-      font-size: 2.3rem;
-      /* instead of 2.8rem */
-      line-height: 1.4;
-      /* optional: makes spacing nicer */
-    }
-
-    .leftSection .buttons {
-      padding: 50px 0;
-    }
-
-    .leftSection .btn {
-      padding: 12px;
-      background: #1e2167;
-      color: white;
-      border: 2px solid white;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    .rightSection img {
-      width: 80%;
-      position: relative;
-      top: -50px;
-      /* moves image UP */
-      left: 10px;
-      /* moves image RIGHT */
-    }
-
-    .purple {
-      color: rgb(170, 107, 228);
-    }
-
-    .text-gray {
-      color: gray;
-    }
-
-    #element {
-      color: rgb(170, 107, 228);
-    }
-
-    /* Social Links */
-    .social-links {
-      margin-top: 20px;
-      display: flex;
-      justify-content: flex-start;
-      /* align left */
-      gap: 30px;
-      /* equal spacing */
-      margin-left: 10px;
-      /* shift entire row to align with resume button */
-    }
-
-    .social-links a {
-      font-size: 1.8rem;
-      transition: transform 0.3s;
-    }
-
-    /* Brand Colors */
-    .social-links a:nth-child(1) {
-      color: #0a66c2;
-    }
-
-    /* LinkedIn */
-    .social-links a:nth-child(2) {
-      color: #e1306c;
-    }
-
-    /* Instagram */
-    .social-links a:nth-child(3) {
-      color: #010101;
-    }
-
-    /* TikTok */
-    .social-links a:nth-child(4) {
-      color: #1877f2;
-    }
-
-    /* Facebook */
-    .social-links a:nth-child(5) {
-      color: #ff0000;
-    }
-
-    /* YouTube */
-    .social-links a:nth-child(6) {
-      color: #333;
-    }
-
-    /* GitHub */
-
-    .social-links a:hover {
-      transform: scale(1.2);
-    }
-
-    .secondSection {
-      min-width: 80vh;
-      margin: auto;
-      height: 80vh;
-      margin-left: 150px;
-    }
-
-    .secondSection h1 {
-      font-size: 1.9rem;
-    }
-
-    /* Experience Card Styles */
-    .experience-card {
-      background: rgb(17, 17, 45);
-      border-radius: 10px;
-      padding: 30px;
-      margin: 40px auto;
-      max-width: 90%;
-      /* <-- YAHAN CHANGE KARO */
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgb(50, 50, 80);
-      width: 100%;
-      /* <-- YEH NAYA LINE ADD KARO */
-    }
-
-    .experience-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .experience-header img {
-      width: 60px;
-      height: 60px;
-      border-radius: 8px;
-      margin-right: 20px;
-      object-fit: cover;
-    }
-
-    .experience-title h3 {
-      font-size: 1.5rem;
-      margin-bottom: 5px;
-      color: white;
-    }
-
-    .experience-title p {
-      font-size: 1.1rem;
-      color: #9c97f1;
-      margin-bottom: 5px;
-    }
-
-    .experience-date {
-      color: gray;
-      font-size: 0.9rem;
-    }
-
-    .experience-desc {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #ccc;
-      padding-top: 15px;
-      border-top: 1px solid rgb(50, 50, 80);
-    }
-
-    /* Certificate Button Styles */
-    .certificate-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      border: none;
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-
-    .certificate-btn:hover {
-      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .certificate-btn i {
-      margin-right: 8px;
-    }
-
-    /* Projects Section */
-    #projects {
-      padding: 60px 0;
-      background: rgb(15, 15, 35);
-      text-align: center;
-    }
-
-    #projects .section-title {
-      font-size: 2rem;
-      margin-bottom: 40px;
-      color: white;
-      position: relative;
-      display: inline-block;
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .project-card {
-      background: rgb(17, 17, 45);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .project-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 10px;
-      color: #007bff;
-    }
-
-    .project-card p {
-      font-size: 0.95rem;
-      color: white;
-      margin-bottom: 15px;
-    }
-
-    .project-card a {
-      text-decoration: none;
-      color: #fff;
-      background: #007bff;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .project-card a:hover {
-      background: #0056b3;
-    }
-
-    .aboutSection {
-      padding: 80px 120px;
-      background-color: rgb(17, 17, 51);
-      text-align: center;
-      /* center text */
-    }
-
-    .aboutSection h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
       color: #fff;
     }
 
-    .aboutSection p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #ccc;
-      max-width: 700px;
-      margin: 0 auto;
-      /* center block */
-    }
-
-    .contactSection {
-      padding: 80px 120px;
-      background-color: rgb(10, 10, 40);
-      color: #fff;
-      text-align: center;
-    }
-
-    .contactSection h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-
-    .contactSection p {
-      color: #ccc;
-      margin-bottom: 40px;
-    }
-
-    .contact-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .contact-info {
-      flex: 1;
-      min-width: 250px;
-      text-align: left;
-    }
-
-    .contact-info p {
-      margin-bottom: 12px;
-      font-size: 1rem;
-    }
-
-    .contact-info a {
-      color: #9c97f1;
-      text-decoration: none;
-    }
-
-    .contact-socials a {
-      margin-right: 15px;
-      color: #9c97f1;
-      transition: color 0.3s ease;
-    }
-
-    .contact-socials a:hover {
-      color: #fff;
-    }
-
-    .contact-form {
-      flex: 1;
-      min-width: 300px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      outline: none;
-      font-size: 1rem;
-    }
-
-    .contact-form button {
-      padding: 12px;
-      background: #1e2167;
-      color: white;
-      border: 2px solid #9c97f1;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background: #9c97f1;
-      color: #000;
-    }
-
-    footer {
-      background-color: #0e0e1a;
-      color: #ccc;
-      padding: 40px 80px;
-    }
-
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 40px;
-    }
-
-    .footer h3 {
-      color: #fff;
-      margin-bottom: 15px;
-      font-size: 18px;
-    }
-
-    .footer ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer ul li {
-      margin-bottom: 8px;
-    }
-
-    .footer ul li a {
-      text-decoration: none;
-      color: #aaa;
-      transition: color 0.3s ease;
-    }
-
-    .footer ul li a:hover {
-      color: #9c97f1;
-    }
-
-    .footer-social a {
-      margin-right: 15px;
-      font-size: 20px;
-      color: #aaa;
-      transition: color 0.3s ease;
-    }
-
-    .footer-social a:hover {
-      color: #9c97f1;
-    }
-
-    .footer-rights {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 14px;
-      color: gray;
-      border-top: 1px solid #222;
-      padding-top: 20px;
-    }
-
-    /* Responsive Design for Tablets and Phones */
-    @media screen and (max-width: 1200px) {
-      nav {
-        flex-direction: column;
-        height: auto;
-        padding: 15px 0;
-      }
-
-      .left {
-        margin-bottom: 15px;
-      }
-
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav ul li {
-        margin: 5px 15px;
-      }
-
-      .firstSection {
-        flex-direction: column-reverse;
-        margin: 80px 0;
-        margin-left: 0;
-        text-align: center;
-      }
-
-      .firstSection>div {
-        width: 80%;
-        margin: 0 auto;
-      }
-
-      .leftSection {
-        font-size: 2rem;
-        margin-top: 30px;
-      }
-
-      .rightSection img {
-        width: 60%;
-        top: 0;
-        left: 0;
-      }
-
-      .social-links {
-        justify-content: center;
-        margin-left: 0;
-      }
-
-      .secondSection {
-        margin-left: 0;
-        height: auto;
-        padding: 40px 20px;
-      }
-
-      .secondSection {
-        margin-left: 0;
-        height: auto;
-        padding: 40px 20px;
-      }
-
-      .experience-card {
-        margin: 40px 20px;
-        padding: 25px;
-      }
-
-      .experience-header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .experience-header img {
-        margin-right: 0;
-        margin-bottom: 15px;
-      }
-
-      .aboutSection,
-      .contactSection {
-        padding: 60px 20px;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-      }
-
-      .contact-container {
-        flex-direction: column;
-        gap: 30px;
-      }
-
-      .contact-info {
-        text-align: center;
-      }
-
-      footer {
-        padding: 40px 20px;
-      }
-
-      .footer {
-        flex-direction: column;
-        gap: 30px;
-        text-align: center;
-      }
-    }
-
-    /* For screens smaller than 768px (phones) */
-    @media screen and (max-width: 768px) {
-      .firstSection>div {
-        width: 90%;
-      }
-
-      .leftSection {
-        font-size: 1.7rem;
-      }
-
-      .rightSection img {
-        width: 70%;
-      }
-
-      .buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-      }
-
-      .btn {
-        width: 80%;
-        font-size: 18px;
-      }
-
-      .social-links {
-        gap: 20px;
-      }
-
-      .social-links a {
-        font-size: 1.5rem;
-      }
-
-      .secondSection h1 {
-        font-size: 1.7rem;
-      }
-
-      .projects-grid {
-        gap: 15px;
-      }
-
-      .project-card {
-        padding: 15px;
-      }
-
-      .project-card h3 {
-        font-size: 1.2rem;
-      }
-
-      .aboutSection h1,
-      .contactSection h1 {
-        font-size: 1.8rem;
-      }
-
-      .contact-form {
-        min-width: 100%;
-      }
-
-      .experience-card {
-        max-width: 95%;
-        /* <-- Mobile par aur better fit */
-        margin: 30px 10px;
-        /* <-- Side margins ko reduce karo */
-        padding: 20px 15px;
-        /* <-- Padding bhi adjust karo */
-      }
-
-      .experience-title h3 {
-        font-size: 1.3rem;
-      }
-
-      .experience-title p {
-        font-size: 1rem;
-      }
-
-      .experience-desc {
-        font-size: 0.95rem;
-      }
-
-      .certificate-btn {
-        width: 100%;
-        text-align: center;
-        padding: 12px 20px;
-      }
-    }
-
-    /* Hamburger Menu */
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
+      gap: 5px;
     }
 
     .hamburger span {
-      height: 3px;
       width: 25px;
-      background: white;
-      margin-bottom: 4px;
+      height: 3px;
+      background: #fff;
       border-radius: 5px;
       transition: 0.3s;
     }
 
-    /* Add to the media query for screens smaller than 768px */
-    @media screen and (max-width: 768px) {
+    /* ================= HERO SECTION ================= */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding-top: 80px;
+      gap: 40px;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content .typed-wrapper {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      height: 40px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 80%;
+      max-width: 500px;
+      filter: drop-shadow(0 0 40px rgba(118, 75, 162, 0.4));
+      animation: floatHero 6s ease-in-out infinite;
+    }
+
+    @keyframes floatHero {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .buttons-group {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 28px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 25px rgba(118, 75, 162, 0.5);
+    }
+
+    .btn-secondary {
+      background: var(--glass-bg);
+      color: white;
+      border: 1px solid var(--glass-border);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      color: var(--text-muted);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #fff;
+      transform: scale(1.1) translateY(-3px);
+    }
+
+    /* ================= GLASS CARDS (General) ================= */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: var(--glass-shadow);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 15px 35px rgba(118, 75, 162, 0.2);
+    }
+
+    /* ================= SERVICES ================= */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-icon {
+      font-size: 2.5rem;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ================= TECH STACK ================= */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .tech-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .tech-pill:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent);
+    }
+
+    /* ================= FEATURED PROJECT ================= */
+    .featured-project {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .featured-media {
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.02);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .featured-media img {
+      width: 100%;
+      max-width: 250px;
+      object-fit: contain;
+      border-radius: 15px;
+    }
+
+    .featured-info h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .featured-info p {
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 25px;
+    }
+
+    .featured-actions {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    /* ================= OTHER PROJECTS ================= */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.2rem;
+    }
+
+    .project-card p {
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    /* ================= EXPERIENCE & TIMELINE ================= */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 2px solid rgba(118, 75, 162, 0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -39px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 4px solid var(--bg-dark);
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .timeline-meta {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
+    }
+
+    /* ================= CONTACT & FOOTER ================= */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-info p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
+    .contact-info p strong {
+      color: #fff;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: 10px;
+      color: #fff;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--primary);
+    }
+
+    footer {
+      background: rgba(4, 4, 20, 0.9);
+      border-top: 1px solid var(--glass-border);
+      padding: 60px 0 20px;
+      margin-top: 50px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      width: min(1200px, 90%);
+      margin: 0 auto;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h3 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .footer-col p {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--glass-border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 992px) {
+
+      .hero,
+      .featured-project,
+      .contact-container {
+        grid-template-columns: 1fr;
+        flex-direction: column-reverse;
+      }
+
+      .hero {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      .buttons-group,
+      .social-links {
+        justify-content: center;
+      }
+
+      .featured-media {
+        aspect-ratio: 16/9;
+      }
+    }
+
+    @media (max-width: 768px) {
       .hamburger {
         display: flex;
       }
 
-      #nav-menu {
-        display: none;
-        flex-direction: column;
+      nav ul {
         position: absolute;
         top: 80px;
         left: 0;
         width: 100%;
-        background-color: rgb(26, 26, 80);
+        background: rgba(4, 4, 20, 0.95);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
         padding: 20px 0;
-        z-index: 1000;
+        gap: 20px;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease;
       }
 
-      #nav-menu.active {
-        display: flex;
+      nav ul.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
       }
 
-      nav ul li {
-        margin: 10px 0;
-        text-align: center;
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="left">Ahmer's Portfolio</div>
-      <div class="right">
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <ul id="nav-menu">
-          <li><a href="">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="">Services</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <section class="firstSection">
-      <div class="leftSection">
-        Hi, My name is <span class="purple">Ahmer Moon</span>
-        <div>and I am a passionate</div>
-        <span id="element"></span>
-        <div class="buttons">
-          <button class="btn"
-            onclick="window.open('https://drive.google.com/file/d/1CNftmUqAFH_r3l0edjgqKaQpY3dkDxzk/view?usp=drive_link', '_blank')">
-            Download Resume
-          </button>
-          <button class="btn" onclick="window.open('https://github.com/AhmerMoon')">
-            Visit Github
-          </button>
-          <!-- Social Links -->
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/" target="_blank"><i
-                class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/ahmermoon28/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.tiktok.com/@ahmer287" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.facebook.com/ahmer.moon.2025/" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.youtube.com/@moongamerz826" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://github.com/AhmerMoon" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="rightSection">
-        <img src="bg.png" alt="" />
-      </div>
-    </section>
+  <nav id="navbar">
+    <a href="#" class="logo">Ahmer Moon<span class="gradient-text">.</span></a>
+    <ul id="nav-menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#tech">Tech Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
 
-    <section class="secondSection">
-      <span class="text-gray">What I have done so far</span>
-      <h1>Work Experience</h1>
-
-      <div class="experience-card">
-        <div class="experience-header">
-          <img src="developer.jpg" alt="Developer" />
-          <div class="experience-title">
-            <h3>IT Intern</h3>
-            <p>Pakistan Ordnance Factories (POF)</p>
-            <span class="experience-date">Aug 2025 - Sep 2025</span>
-          </div>
-        </div>
-        <div class="experience-desc">
-          Worked as an IT intern at Pakistan Ordnance Factories (POF), where
-          I gained hands-on experience in software development and project
-          management.
-        </div>
-        <!-- Add this button - replace YOUR_CERTIFICATE_URL with actual URL -->
-        <a href="https://media.licdn.com/dms/image/v2/D562DAQHTdXctCWcEdw/profile-treasury-image-shrink_800_800/B56Zmsya4.J8AY-/0/1759540524089?e=1769014800&v=beta&t=DnjAqQCvQPQn5fTHvhOe819UlNHCMa76JbOrBbLP1yY"
-          target="_blank" class="certificate-btn">
-          <i class="fas fa-certificate"></i> View Certificate
+  <section id="home" class="section-container hero">
+    <div class="hero-content" data-aos="fade-right">
+      <h1>Hi, I'm <span class="gradient-text">Ahmer Moon</span></h1>
+      <div class="typed-wrapper">
+        <span id="typed-text"></span>
+      </div>
+      <p style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; max-width: 500px;">
+        I build production-ready commercial mobile applications and integrate custom Computer Vision models.
+        Specializing in serverless AI architectures and seamless digital experiences.
+      </p>
+      <div class="buttons-group">
+        <a href="https://drive.google.com/file/d/1JdBZwrf0DrGpjTV3e4Q04g0O3xOc9dcb/view?usp=sharing" target="_blank"
+          class="btn btn-primary">
+          <i class="fas fa-file-pdf"></i> Download Resume
+        </a>
+        <a href="https://github.com/AhmerMoon" target="_blank" class="btn btn-secondary">
+          <i class="fab fa-github"></i> Visit GitHub
         </a>
       </div>
-    </section>
-  </main>
-
-  <!-- Projects Section -->
-  <section id="projects">
-    <div class="container">
-      <h2 class="section-title">Projects</h2>
-      <div class="projects-grid">
-        <!-- Card 1 -->
-        <div class="project-card">
-          <h3>POF E-Services App</h3>
-          <p>A Clone of POF E-Services App clone made with Flutter.</p>
-          <a href="https://github.com/AhmerMoon/POF_E-Services_App/releases/tag/apk" target="_blank">Download APK</a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="project-card">
-          <h3>Medicine Reminder App</h3>
-          <p>A Medicine Reminder App built with Flutter and Firebase.</p>
-          <a href="https://github.com/AhmerMoon/Medicine_Reminder_App" target="_blank">View on GitHub</a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="project-card">
-          <h3>Tic Tac Toe Game</h3>
-          <p>A Tic Tac Toe Game built with HTML, CSS, and JavaScript.</p>
-          <a href="https://tic-tac-toe-amber-omega.vercel.app/" target="_blank">View Website</a>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="project-card">
-          <h3>Flappy Bird Game</h3>
-          <p>A Flappy Bird clone built with Windows Forms in C#.</p>
-          <a href="https://github.com/AhmerMoon/Flappy-Bird-Game" target="_blank">View on GitHub</a>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="project-card">
-          <h3>Cricket Player Predictor</h3>
-          <p>A Player Score Predictor using Python and ML.</p>
-          <a href="https://cricket-player-predictor-tyt8dw2aavs5gbprejpupe.streamlit.app/" target="_blank">View
-            Website</a>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="project-card">
-          <h3>Moon Currency Converter</h3>
-          <p>
-            A Currency Converter App built using HTML, CSS and JavaScript.
-          </p>
-          <a href="https://moon-currency-converter.vercel.app/" target="_blank">View Website</a>
-        </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/" target="_blank"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="https://www.tiktok.com/@ahmer287" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/ahmermoon28/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@moongamerz826" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
+    </div>
+    <div class="hero-image" data-aos="fade-left">
+      <img src="bg.png" alt="Hero Background"
+        onerror="this.src='https://cdn3d.iconscout.com/3d/premium/thumb/web-developer-4506461-3730815.png'" />
     </div>
   </section>
 
-  <section id="about" class="aboutSection">
-    <h1>About Me</h1>
-    <p>
-      I am <span class="purple">Ahmer Moon</span>, a 8th semester Computer
-      Science student at COMSATS University Wah Campus. I am passionate about
-      <b>AI, Web, and App Development</b>. With experience in projects ranging
-      from machine learning to full-stack development, I aim to build
-      impactful digital solutions that solve real-world problems.
-    </p>
+  <section id="services" class="section-container">
+    <span class="section-subtitle" data-aos="fade-up">What I Do</span>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Services Offered</h2>
+    <div class="services-grid" style="margin-top: 40px;">
+
+      <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <h3>Full-Stack Mobile Development</h3>
+        <p>Building responsive, commercial-grade mobile applications from scratch using Flutter and Firebase, ensuring
+          high performance across devices.</p>
+      </div>
+
+      <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+        <h3>AI & Computer Vision Solutions</h3>
+        <p>Training and integrating custom machine learning models (YOLOv8, ResNet-50) directly into production-ready
+          software environments.</p>
+      </div>
+
+      <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+        <h3>Serverless Architecture & DevOps</h3>
+        <p>Architecting scalable APIs with FastAPI and managing seamless cloud deployments, CI/CD pipelines, and GPU
+          orchestration.</p>
+      </div>
+
+    </div>
   </section>
 
-  <section id="contact" class="contactSection">
-    <h1>Contact Me</h1>
-    <p>
-      If you’d like to work together or have any questions, feel free to reach
-      out.
-    </p>
+  <section id="tech" class="section-container">
+    <span class="section-subtitle" data-aos="fade-up">My Arsenal</span>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Tech Stack</h2>
+    <div class="tech-grid" style="margin-top: 40px;">
 
-    <div class="contact-container">
-      <div class="contact-info">
-        <p>
-          <strong>Email:</strong>
-          <a href="mailto:ahmermoonmajid@gmail.com">ahmermoonmajid@gmail.com</a>
-        </p>
-        <p><strong>Phone:</strong> +92 328 5077511</p>
-        <p><strong>Location:</strong> Wah Cantt, Pakistan</p>
-        <div class="contact-socials">
-          <a href="https://github.com/AhmerMoon" target="_blank">GitHub</a>
-          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
+        <h3>Frontend & Mobile</h3>
+        <div class="tech-list">
+          <span class="tech-pill">Flutter (Dart)</span>
+          <span class="tech-pill">HTML5</span>
+          <span class="tech-pill">CSS3</span>
+          <span class="tech-pill">JavaScript</span>
         </div>
+      </div>
+
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="200">
+        <h3>Backend & AI</h3>
+        <div class="tech-list">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">FastAPI</span>
+          <span class="tech-pill">YOLOv8</span>
+          <span class="tech-pill">ResNet</span>
+          <span class="tech-pill">C++ / Java / C#</span>
+        </div>
+      </div>
+
+      <div class="glass-card" data-aos="fade-up" data-aos-delay="300">
+        <h3>DevOps & Cloud</h3>
+        <div class="tech-list">
+          <span class="tech-pill">Docker</span>
+          <span class="tech-pill">Kubernetes</span>
+          <span class="tech-pill">Jenkins</span>
+          <span class="tech-pill">AWS</span>
+          <span class="tech-pill">Modal.com</span>
+          <span class="tech-pill">Firebase</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects" class="section-container">
+    <span class="section-subtitle" data-aos="fade-up">Selected Work</span>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Featured Project</h2>
+
+    <div class="glass-card featured-project" data-aos="fade-up"
+      style="margin-top: 40px; border-color: rgba(118, 75, 162, 0.4);">
+      <div class="featured-media">
+        <img
+          src="https://play-lh.googleusercontent.com/ZIa_ZqIFI1FmWtYkxv7SZYlgl556k649bDh1lQ9CqoPS4JmKUcKSptGJ2D3_AcdmJySRFIGxSKpYOpZKAMB0Dw=w480-h960-rw"
+          alt="Skinalytics Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3004/3004613.png'" />
+      </div>
+      <div class="featured-info">
+        <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;">COMMERCIAL
+          APP</span>
+        <h3>Skinalytics</h3>
+        <p>
+          An AI-powered clinical-grade skincare assistant built for a Swiss brand (Regeneva). Developed a highly
+          optimized Flutter frontend connected to a serverless FastAPI backend orchestrated on Modal.com. Trained custom
+          YOLOv8 and ResNet-50 models utilizing Test-Time Augmentation (TTA) for real-time 10-condition skin mapping.
+        </p>
+        <div class="featured-actions">
+          <a href="https://play.google.com/store/apps/details?id=com.skinalytics.app&pcampaignid=web_share"
+            target="_blank" class="btn btn-primary">
+            <i class="fab fa-google-play"></i> Get on Play Store
+          </a>
+          <a href="https://youtube.com/shorts/DAt0mzh2saU?si=mFyjiaCghsqWB7wO" target="_blank"
+            class="btn btn-secondary">
+            <i class="fab fa-youtube"></i> Watch Demo
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 20px; font-size: 1.5rem;" data-aos="fade-up">Other Projects</h3>
+    <div class="projects-grid">
+
+      <div class="glass-card project-card" data-aos="fade-up">
+        <i class="fa-solid fa-building-shield" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>POF E-Services App</h3>
+        <p>A functional clone of the Pakistan Ordnance Factories employee portal for complaints and pay-slips built with
+          Flutter & Firebase.</p>
+        <a href="https://github.com/AhmerMoon/POF_E-Services_App/releases/tag/apk" target="_blank"
+          class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Download APK</a>
+      </div>
+
+      <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa-solid fa-pills" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Medicine Reminder App</h3>
+        <p>A health utility application built with Flutter and Firebase for accurate medication tracking and alerts.</p>
+        <a href="https://github.com/AhmerMoon/Medicine_Reminder_App" target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">View Code</a>
+      </div>
+
+      <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa-solid fa-chart-line" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Cricket Player Predictor</h3>
+        <p>A machine learning tool using Python to analyze and predict cricket player performance metrics.</p>
+        <a href="https://cricket-player-predictor-tyt8dw2aavs5gbprejpupe.streamlit.app/" target="_blank"
+          class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Live App</a>
+      </div>
+
+      <div class="glass-card project-card" data-aos="fade-up">
+        <i class="fa-solid fa-gamepad" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Flappy Bird / Tic Tac Toe</h3>
+        <p>Classic games built using C# Windows Forms and HTML/CSS/JS to demonstrate core programming logic.</p>
+        <a href="https://github.com/AhmerMoon/Flappy-Bird-Game" target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">View Code</a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience" class="section-container">
+    <span class="section-subtitle" data-aos="fade-up">Journey</span>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Experience & Achievements</h2>
+
+    <div class="timeline" style="margin-top: 40px;">
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-content">
+          <div class="timeline-meta">Aug 2025 - Sep 2025</div>
+          <h3>IT Intern @ Pakistan Ordnance Factories (POF)</h3>
+          <p>Developed mobile apps using Flutter with Firebase integration. Built a functional clone of the POF
+            E-Services App employee portal.</p>
+          <a href="https://drive.google.com/file/d/14SGkg5XGAk9VnkO-avQ6G9oANiwlSFxz/view?usp=sharing" target="_blank"
+            class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
+            <i class="fas fa-certificate"></i> View Certificate
+          </a>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-content">
+          <div class="timeline-meta">2022 - 2026 (Present)</div>
+          <h3>COMSATS University Islamabad</h3>
+          <p>Bachelor of Science in Computer Science (8th Semester). Current CGPA: 3.79.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-content">
+          <div class="timeline-meta">Competition Winner</div>
+          <h3>2x Rubik's Cube Champion</h3>
+          <p>Demonstrated high-speed analytical problem solving under pressure.</p>
+          <div class="buttons-group" style="margin-bottom: 0;">
+            <a href="https://drive.google.com/file/d/1ZRCv-fIhg29N13_mAv9RXnrnel8OEwee/view?usp=sharing" target="_blank"
+              class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate 1</a>
+            <a href="https://drive.google.com/file/d/1mCq66f4bvYgklycpHs9arPz4bOTuVDtz/view?usp=sharing" target="_blank"
+              class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate 2</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-content">
+          <div class="timeline-meta">Global Ranking</div>
+          <h3>Verified Speedrunner</h3>
+          <p>Officially recognized speedrun records reflecting consistency, precision, and a performance-driven mindset.
+          </p>
+          <a href="https://www.speedrun.com/goiwbf/runs/y8lpl91m" target="_blank" class="btn btn-primary"
+            style="font-size: 0.85rem; padding: 8px 16px;">View Run on Speedrun.com</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="section-container">
+    <span class="section-subtitle" data-aos="fade-up">Get in Touch</span>
+    <h2 class="section-title gradient-text" data-aos="fade-up">Contact Me</h2>
+
+    <div class="glass-card contact-container" data-aos="fade-up" style="margin-top: 40px;">
+      <div class="contact-info">
+        <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Let's build something great.</h3>
+        <p>If you'd like to work together, discuss AI integrations, or have any questions, feel free to reach out.</p>
+        <p><i class="fa-solid fa-envelope" style="color: var(--accent); margin-right: 10px;"></i>
+          <strong>Email:</strong> <br> <a href="mailto:ahmermoonmajid@gmail.com">ahmermoonmajid@gmail.com</a>
+        </p>
+        <p><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 10px;"></i> <strong>Phone:</strong>
+          <br> +92 328 5077511
+        </p>
+        <p><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 10px;"></i>
+          <strong>Location:</strong> <br> Wah Cantt, Pakistan
+        </p>
       </div>
 
       <form class="contact-form">
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send
+          Message</button>
       </form>
     </div>
   </section>
 
   <footer>
-    <div class="footer">
-      <div class="footer-first">
+    <div class="footer-grid">
+      <div class="footer-col">
         <h3>Ahmer Moon</h3>
-        <p>
-          Aspiring AI Expert & Web/App Developer. Passionate about building
-          impactful digital solutions.
-        </p>
+        <p>App Developer & AI Specialist. Passionate about building impactful, scalable digital solutions from mobile to
+          cloud.</p>
       </div>
-
-      <div class="footer-second">
+      <div class="footer-col">
         <h3>Quick Links</h3>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
         </ul>
       </div>
-
-      <div class="footer-third">
+      <div class="footer-col">
         <h3>Connect</h3>
-        <div class="footer-social">
-          <a href="https://github.com/AhmerMoon" target="_blank">GitHub</a>
-          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-          <a href="mailto:youremail@example.com">Email</a>
+        <div class="social-links">
+          <a href="https://github.com/AhmerMoon" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/" target="_blank"><i
+              class="fab fa-linkedin"></i></a>
+          <a href="https://www.tiktok.com/@ahmer287" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
     </div>
-
-    <div class="footer-rights">© 2025 Ahmer Moon | All Rights Reserved</div>
+    <div class="footer-bottom">
+      &copy; 2026 Ahmer Moon Majid | Built with Passion.
+    </div>
   </footer>
-</body>
-<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-<script>
-  var typed = new Typed("#element", {
-    strings: ["App Developer", "Web Developer"],
-    typeSpeed: 50,
-  });
 
-  // Add this script after your existing Typed.js script
-  document.addEventListener("DOMContentLoaded", function () {
-    const hamburger = document.getElementById("hamburger");
-    const navMenu = document.getElementById("nav-menu");
-
-    hamburger.addEventListener("click", function () {
-      navMenu.classList.toggle("active");
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script>
+    // Initialize Scroll Animations
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
     });
 
-    // Close menu when clicking on a link
-    const navLinks = document.querySelectorAll("#nav-menu a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", function () {
-        navMenu.classList.remove("active");
+    // Initialize Typing Effect
+    var typed = new Typed("#typed-text", {
+      strings: ["App Developer.", "AI & ML Engineer.", "DevOps Enthusiast."],
+      typeSpeed: 50,
+      backSpeed: 30,
+      loop: true,
+      cursorChar: '_'
+    });
+
+    // Navbar Scroll & Hamburger Logic
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbar = document.getElementById("navbar");
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("nav-menu");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+
+      hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll("#nav-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+        });
       });
     });
-  });
 
-  // EmailJS functionality
-  (function () {
-    // Initialize EmailJS with your Public Key
-    emailjs.init("oD1GfMfx9Sw4eKoHQ");
+    // EmailJS Setup (Kept your original logic)
+    (function () {
+      emailjs.init("oD1GfMfx9Sw4eKoHQ");
 
-    // Form submission handler
-    document.querySelector('.contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
+      document.querySelector('.contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-      // Get form data
-      const name = document.querySelector('input[type="text"]').value;
-      const email = document.querySelector('input[type="email"]').value;
-      const message = document.querySelector('textarea').value;
+        const name = document.querySelector('input[type="text"]').value;
+        const email = document.querySelector('input[type="email"]').value;
+        const message = document.querySelector('textarea').value;
+        const submitBtn = document.querySelector('.contact-form button');
 
-      // Basic validation
-      if (!name || !email || !message) {
-        alert('Please fill in all fields');
-        return;
-      }
+        if (!name || !email || !message) {
+          alert('Please fill in all fields');
+          return;
+        }
 
-      // Email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address');
-        return;
-      }
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
 
-      // Show loading state
-      const submitBtn = document.querySelector('.contact-form button');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-
-      // Send email using EmailJS
-      emailjs.send("service_ocl1s6w", "template_552j313", {
-        from_name: name,
-        from_email: email,
-        message: message,
-        to_email: "ahmermoonmajid@gmail.com" // Added this for clarity
-      })
-        .then(function (response) {
-          alert('Message sent successfully! I\'ll get back to you soon.');
-          document.querySelector('.contact-form').reset();
-        }, function (error) {
-          alert('Failed to send message. Please try again or email me directly at ahmermoonmajid@gmail.com');
-          console.error('EmailJS Error:', error);
+        emailjs.send("service_ocl1s6w", "template_552j313", {
+          from_name: name,
+          from_email: email,
+          message: message,
+          to_email: "ahmermoonmajid@gmail.com"
         })
-        .finally(function () {
-          // Reset button state
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        });
-    });
-  })();
-</script>
+          .then(function () {
+            alert('Message sent successfully! I will get back to you soon.');
+            document.querySelector('.contact-form').reset();
+          }, function (error) {
+            alert('Failed to send message. Please try again or email me directly.');
+            console.error('EmailJS Error:', error);
+          })
+          .finally(function () {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          });
+      });
+    })();
+  </script>
+</body>
 
 </html>
