@@ -169,12 +169,14 @@
 
     /* ================= HERO SECTION ================= */
     .hero {
+      position: relative;
       display: flex;
       align-items: center;
       justify-content: space-between;
       min-height: 100vh;
       padding-top: 80px;
       gap: 40px;
+      overflow: hidden;
     }
 
     .hero-content {
@@ -198,6 +200,7 @@
       flex: 1;
       display: flex;
       justify-content: center;
+      position: relative;
     }
 
     .hero-image img {
@@ -217,6 +220,107 @@
       50% {
         transform: translateY(-20px);
       }
+    }
+
+    /* ── HERO NEON BACKGROUND (orbs + grid) ── */
+    .hero-bg {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.95;
+      /* combined horizontal + vertical float */
+      animation: floatXY 12s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    .orb1 {
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(118, 75, 162, 0.45), transparent 70%);
+      top: -10%;
+      left: -6%;
+      animation-delay: 0s
+    }
+
+    .orb2 {
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(46, 196, 182, 0.22), transparent 70%);
+      bottom: -6%;
+      right: 6%;
+      animation-delay: -3s
+    }
+
+    .orb3 {
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.18), transparent 70%);
+      top: 28%;
+      right: 28%;
+      animation-delay: -5s
+    }
+
+    /* per-orb timing/direction */
+    .orb1 {
+      animation-duration: 14s;
+      animation-direction: alternate
+    }
+
+    .orb2 {
+      animation-duration: 10s;
+      animation-direction: alternate-reverse
+    }
+
+    .orb3 {
+      animation-duration: 18s;
+      animation-direction: alternate
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%)
+    }
+
+    @keyframes floatXY {
+      0% {
+        transform: translate(-40px, 0) scale(1);
+      }
+
+      25% {
+        transform: translate(10px, -20px) scale(1.02);
+      }
+
+      50% {
+        transform: translate(40px, -30px) scale(1.05);
+      }
+
+      75% {
+        transform: translate(10px, -15px) scale(1.03);
+      }
+
+      100% {
+        transform: translate(-40px, 0) scale(1);
+      }
+    }
+
+    /* ensure main content sits above orbs */
+    .hero-content,
+    .hero-image {
+      position: relative;
+      z-index: 3;
     }
 
     .buttons-group {
@@ -635,6 +739,12 @@
   </nav>
 
   <section id="home" class="section-container hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb orb1"></div>
+      <div class="hero-orb orb2"></div>
+      <div class="hero-orb orb3"></div>
+    </div>
     <div class="hero-content" data-aos="fade-right">
       <h1>Hi, I'm <span class="gradient-text">Ahmer Moon</span></h1>
       <div class="typed-wrapper">
@@ -674,15 +784,16 @@
 
       <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="100">
         <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
-        <h3>Full-Stack Mobile Development</h3>
-        <p>Building responsive, commercial-grade mobile applications from scratch using Flutter and Firebase, ensuring
+        <h3>Full-Stack App Development</h3>
+        <p>Building responsive, commercial-grade mobile applications from scratch using Flutter and SupaBase, ensuring
           high performance across devices.</p>
       </div>
 
       <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="200">
         <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
         <h3>AI & Computer Vision Solutions</h3>
-        <p>Training and integrating custom machine learning models (YOLOv8, ResNet-50) directly into production-ready
+        <p>Training, Integrating and Deploying custom machine learning models (YOLOv8, ResNet-50) directly into
+          production-ready
           software environments.</p>
       </div>
 
@@ -702,7 +813,7 @@
     <div class="tech-grid" style="margin-top: 40px;">
 
       <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
-        <h3>Frontend & Mobile</h3>
+        <h3>App and Web</h3>
         <div class="tech-list">
           <span class="tech-pill">Flutter (Dart)</span>
           <span class="tech-pill">HTML5</span>
@@ -715,6 +826,7 @@
         <h3>Backend & AI</h3>
         <div class="tech-list">
           <span class="tech-pill">Python</span>
+          <span class="tech-pill">Pytorch</span>
           <span class="tech-pill">FastAPI</span>
           <span class="tech-pill">YOLOv8</span>
           <span class="tech-pill">ResNet</span>
@@ -730,7 +842,7 @@
           <span class="tech-pill">Jenkins</span>
           <span class="tech-pill">AWS</span>
           <span class="tech-pill">Modal.com</span>
-          <span class="tech-pill">Firebase</span>
+          <span class="tech-pill">SupaBase</span>
         </div>
       </div>
 
@@ -800,10 +912,10 @@
 
       <div class="glass-card project-card" data-aos="fade-up">
         <i class="fa-solid fa-gamepad" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-        <h3>Flappy Bird / Tic Tac Toe</h3>
-        <p>Classic games built using C# Windows Forms and HTML/CSS/JS to demonstrate core programming logic.</p>
-        <a href="https://github.com/AhmerMoon/Flappy-Bird-Game" target="_blank" class="btn btn-secondary"
-          style="font-size: 0.85rem; padding: 8px 16px;">View Code</a>
+        <h3>Tic Tac Toe</h3>
+        <p>A paper style tic tac toe game built with HTML, CSS, and JavaScript.</p>
+        <a href="https://tictactoe-ahmermoon.vercel.app/" target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">Play Game</a>
       </div>
 
     </div>
@@ -834,7 +946,7 @@
         <div class="glass-card timeline-content">
           <div class="timeline-meta">2022 - 2026 (Present)</div>
           <h3>COMSATS University Islamabad</h3>
-          <p>Bachelor of Science in Computer Science (8th Semester). Current CGPA: 3.79.</p>
+          <p>Bachelor of Science in Computer Science. Current CGPA: 3.79.</p>
         </div>
       </div>
 
@@ -849,6 +961,8 @@
               class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate 1</a>
             <a href="https://drive.google.com/file/d/1mCq66f4bvYgklycpHs9arPz4bOTuVDtz/view?usp=sharing" target="_blank"
               class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate 2</a>
+            <a href="https://www.instagram.com/reel/DQ9lhthCNvc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+              target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Watch Win</a>
           </div>
         </div>
       </div>
@@ -941,7 +1055,7 @@
 
     // Initialize Typing Effect
     var typed = new Typed("#typed-text", {
-      strings: ["App Developer.", "AI & ML Engineer.", "DevOps Enthusiast."],
+      strings: ["App Developer.", "AI & ML Engineer.", "DevOps Engineer."],
       typeSpeed: 50,
       backSpeed: 30,
       loop: true,
@@ -1013,6 +1127,8 @@
           });
       });
     })();
+
+    // Hero neon orbs are now animated via CSS (floatXY keyframes).
   </script>
 </body>
 
