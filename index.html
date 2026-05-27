@@ -187,11 +187,19 @@
       margin-bottom: 20px;
     }
 
+    .hero-content h1 .gradient-text {
+      text-shadow: 0 0 1px rgba(255, 255, 255, 0.35), 0 0 10px rgba(118, 75, 162, 0.3);
+      filter: none;
+    }
+
     .hero-content .typed-wrapper {
-      font-size: 1.5rem;
-      color: var(--text-muted);
+      font-size: 1.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #d9ddff;
       margin-bottom: 30px;
       height: 40px;
+      text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 8px rgba(46, 196, 182, 0.2);
     }
 
     .hero-image {
@@ -457,6 +465,38 @@
       margin-bottom: 15px;
     }
 
+    .timeline-content.with-logo {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .timeline-content.with-logo .timeline-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .timeline-logo {
+      flex: 0 0 140px;
+      width: 140px;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      background: rgba(255, 255, 255, 0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .timeline-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
     /* ================= CONTACT & FOOTER ================= */
     .contact-container {
       display: grid;
@@ -579,11 +619,20 @@
       .featured-media {
         aspect-ratio: 16/9;
       }
+
+      .timeline-content.with-logo {
+        align-items: flex-start;
+      }
     }
 
     @media (max-width: 768px) {
       .hamburger {
         display: flex;
+      }
+
+      .hero-image img {
+        width: 65%;
+        max-width: 280px;
       }
 
       nav ul {
@@ -609,8 +658,21 @@
         font-size: 2.5rem;
       }
 
+      .hero-content .typed-wrapper {
+        font-size: 1.35rem;
+      }
+
       .section-title {
         font-size: 2rem;
+      }
+
+      .timeline-content.with-logo {
+        flex-direction: column;
+      }
+
+      .timeline-logo {
+        width: 120px;
+        flex-basis: auto;
       }
     }
   </style>
@@ -618,7 +680,7 @@
 
 <body>
   <nav id="navbar">
-    <a href="#" class="logo">Ahmer Moon<span class="gradient-text">.</span></a>
+    <a href="#" class="logo">Ahmer's Portfolio<span class="gradient-text">.</span></a>
     <ul id="nav-menu">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
@@ -645,7 +707,7 @@
         Specializing in serverless AI architectures and seamless digital experiences.
       </p>
       <div class="buttons-group">
-        <a href="https://drive.google.com/file/d/1JdBZwrf0DrGpjTV3e4Q04g0O3xOc9dcb/view?usp=sharing" target="_blank"
+        <a href="https://drive.google.com/file/d/1fUf42g5qMZ6qsC4hy1vYQwCjg-3jfMpQ/view?usp=sharing" target="_blank"
           class="btn btn-primary">
           <i class="fas fa-file-pdf"></i> Download Resume
         </a>
@@ -706,6 +768,7 @@
         <h3>App and Web</h3>
         <div class="tech-list">
           <span class="tech-pill">Flutter (Dart)</span>
+          <span class="tech-pill">Laravel</span>
           <span class="tech-pill">HTML5</span>
           <span class="tech-pill">CSS3</span>
           <span class="tech-pill">JavaScript</span>
@@ -721,6 +784,7 @@
           <span class="tech-pill">YOLOv8</span>
           <span class="tech-pill">ResNet</span>
           <span class="tech-pill">C++ / Java / C#</span>
+          <span class="tech-pill">SupaBase</span>
         </div>
       </div>
 
@@ -732,7 +796,6 @@
           <span class="tech-pill">Jenkins</span>
           <span class="tech-pill">AWS</span>
           <span class="tech-pill">Modal.com</span>
-          <span class="tech-pill">SupaBase</span>
         </div>
       </div>
 
@@ -752,7 +815,7 @@
       </div>
       <div class="featured-info">
         <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;">COMMERCIAL
-          APP</span>
+          APP (MY FINAL YEAR PROJECT)</span>
         <h3>Skinalytics</h3>
         <p>
           An AI-powered clinical-grade skincare assistant built for a Swiss brand (Regeneva). Developed a highly
@@ -808,6 +871,24 @@
           style="font-size: 0.85rem; padding: 8px 16px;">Play Game</a>
       </div>
 
+      <!-- ADD ANOTHER PROJECT CARD OF MOON CURRENCY CONVERTER -->
+      <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa-solid fa-coins" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Moon Currency Converter</h3>
+        <p>A simple currency converter app built with Flutter and Firebase for real-time exchange rate updates.</p>
+        <a href="https://moon-currency-converter.vercel.app/" target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">Convert Currency</a>
+      </div>
+
+      <!-- ADD ANOTHER PROJECT CARD OF ONLINE AUCTION SYSTEM -->
+      <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="400">
+        <i class="fa-solid fa-gavel" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Online Auction System</h3>
+        <p>An online auction platform built with Java and GUI for seamless bidding and selling experiences.</p>
+        <a href="https://github.com/AhmerMoon/Online_Auction_System" target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">View Code</a>
+      </div>
+
     </div>
   </section>
 
@@ -819,47 +900,69 @@
 
       <div class="timeline-item" data-aos="fade-up">
         <div class="timeline-dot"></div>
-        <div class="glass-card timeline-content">
-          <div class="timeline-meta">Aug 2025 - Sep 2025</div>
-          <h3>IT Intern @ Pakistan Ordnance Factories (POF)</h3>
-          <p>Developed mobile apps using Flutter with Firebase integration. Built a functional clone of the POF
-            E-Services App employee portal.</p>
-          <a href="https://drive.google.com/file/d/14SGkg5XGAk9VnkO-avQ6G9oANiwlSFxz/view?usp=sharing" target="_blank"
-            class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
-            <i class="fas fa-certificate"></i> View Certificate
-          </a>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="glass-card timeline-content">
-          <div class="timeline-meta">2022 - 2026 (Present)</div>
-          <h3>COMSATS University Islamabad</h3>
-          <p>Bachelor of Science in Computer Science. Current CGPA: 3.79.</p>
-        </div>
-      </div>
-
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-dot"></div>
-        <div class="glass-card timeline-content">
-          <div class="timeline-meta">Competition Winner</div>
-          <h3>2x Rubik's Cube Champion</h3>
-          <p>Demonstrated high-speed analytical problem solving under pressure.</p>
-          <div class="buttons-group" style="margin-bottom: 0;">
-            <a href="https://drive.google.com/file/d/1ZRCv-fIhg29N13_mAv9RXnrnel8OEwee/view?usp=sharing" target="_blank"
-              class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate 1</a>
-            <a href="https://drive.google.com/file/d/1mCq66f4bvYgklycpHs9arPz4bOTuVDtz/view?usp=sharing" target="_blank"
-              class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate 2</a>
-            <a href="https://www.instagram.com/reel/DQ9lhthCNvc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-              target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Watch Win</a>
+        <div class="glass-card timeline-content with-logo">
+          <div class="timeline-body">
+            <div class="timeline-meta">Aug 2025 - Sep 2025</div>
+            <h3>IT Intern @ Pakistan Ordnance Factories (POF)</h3>
+            <p>Developed mobile apps using Flutter with Firebase integration. Built a functional clone of the POF
+              E-Services App employee portal.</p>
+            <a href="https://drive.google.com/file/d/14SGkg5XGAk9VnkO-avQ6G9oANiwlSFxz/view?usp=sharing" target="_blank"
+              class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
+              <i class="fas fa-certificate"></i> View Certificate
+            </a>
+          </div>
+          <div class="timeline-logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIaq4IAzTEhxrZLYFzkkvE3_W7y_lbetDLgA&s"
+              alt="POF logo" />
           </div>
         </div>
       </div>
 
       <div class="timeline-item" data-aos="fade-up">
         <div class="timeline-dot"></div>
-        <div class="glass-card timeline-content">
+        <div class="glass-card timeline-content with-logo">
+          <div class="timeline-body">
+            <div class="timeline-meta">2022 - 2026 (Present)</div>
+            <h3>COMSATS University Islamabad</h3>
+            <p>Bachelor of Science in Computer Science. Current CGPA: 3.79.</p>
+          </div>
+          <div class="timeline-logo">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/c/c0/COMSATS_new_logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+              alt="COMSATS logo" />
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-up">
+        <div class="timeline-dot"></div>
+        <div class="glass-card timeline-content with-logo">
+          <div class="timeline-body">
+            <div class="timeline-meta">Competition Winner</div>
+            <h3>2x Rubik's Cube Champion</h3>
+            <p>Demonstrated high-speed analytical problem solving under pressure.</p>
+            <div class="buttons-group" style="margin-bottom: 0;">
+              <a href="https://drive.google.com/file/d/1ZRCv-fIhg29N13_mAv9RXnrnel8OEwee/view?usp=sharing"
+                target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate
+                1</a>
+              <a href="https://drive.google.com/file/d/1mCq66f4bvYgklycpHs9arPz4bOTuVDtz/view?usp=sharing"
+                target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate
+                2</a>
+              <a href="https://www.instagram.com/reel/DQ9lhthCNvc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Watch Win</a>
+            </div>
+          </div>
+          <div class="timeline-logo">
+            <img src="https://cubezz.com/images/201705/goods_img/4988_P_1493949417803.jpg" alt="Rubik's cube logo" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item" data-aos="fade-up">
+      <div class="timeline-dot"></div>
+      <div class="glass-card timeline-content with-logo">
+        <div class="timeline-body">
           <div class="timeline-meta">Global Ranking</div>
           <h3>Verified Speedrunner</h3>
           <p>Officially recognized speedrun records reflecting consistency, precision, and a performance-driven mindset.
@@ -867,7 +970,11 @@
           <a href="https://www.speedrun.com/goiwbf/runs/y8lpl91m" target="_blank" class="btn btn-primary"
             style="font-size: 0.85rem; padding: 8px 16px;">View Run on Speedrun.com</a>
         </div>
+        <div class="timeline-logo">
+          <img src="https://www.speedrun.com/images/logocover.png" alt="Speedrun logo" />
+        </div>
       </div>
+    </div>
 
     </div>
   </section>
