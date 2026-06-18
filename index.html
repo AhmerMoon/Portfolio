@@ -707,7 +707,7 @@
         Specializing in serverless AI architectures and seamless digital experiences.
       </p>
       <div class="buttons-group">
-        <a href="https://drive.google.com/file/d/1iOYa-QRlNl3uQ_I8_jY4iuvP3RypoDMH/view?usp=sharing" target="_blank"
+        <a href="https://drive.google.com/file/d/1fUf42g5qMZ6qsC4hy1vYQwCjg-3jfMpQ/view?usp=sharing" target="_blank"
           class="btn btn-primary">
           <i class="fas fa-file-pdf"></i> Download Resume
         </a>
@@ -752,8 +752,8 @@
       <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="300">
         <div class="service-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
         <h3>Serverless Architecture & DevOps</h3>
-        <p>Architecting scalable APIs with FastAPI and managing seamless cloud deployments, CI/CD pipelines, and GPU
-          orchestration.</p>
+        <p>Deploying production AI inference pipelines on serverless GPU infrastructure (Modal, Docker),
+          with FastAPI backends designed for low-latency mobile consumption.</p>
       </div>
 
     </div>
@@ -818,9 +818,12 @@
           APP (MY FINAL YEAR PROJECT)</span>
         <h3>Skinalytics</h3>
         <p>
-          An AI-powered clinical-grade skincare assistant built for a Swiss brand (Regeneva). Developed a highly
-          optimized Flutter frontend connected to a serverless FastAPI backend orchestrated on Modal.com. Trained custom
-          YOLOv8 and ResNet-50 models utilizing Test-Time Augmentation (TTA) for real-time 10-condition skin mapping.
+          An AI-powered clinical-grade skincare analysis app, commercially live on the Google Play Store
+          and built for Swiss brand <strong>Regeneva</strong>. The backend runs 4 custom models -
+          1 ResNet-50 skin type classifier and 3 YOLOv8 detectors - on Modal GPU (T4) infrastructure,
+          delivering per-condition severity scores across 10 skin conditions in real time. The Flutter
+          frontend connects to a serverless FastAPI pipeline, with cold-start latency minimized via a
+          /warmup endpoint pre-fired on user login.
         </p>
         <div class="featured-actions">
           <a href="https://play.google.com/store/apps/details?id=com.skinalytics.app&pcampaignid=web_share"
@@ -841,8 +844,9 @@
       <div class="glass-card project-card" data-aos="fade-up">
         <i class="fa-solid fa-building-shield" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
         <h3>POF E-Services App</h3>
-        <p>A functional clone of the Pakistan Ordnance Factories employee portal for complaints and pay-slips built with
-          Flutter & Firebase.</p>
+        <p>A Flutter mobile portal built during my POF internship, featuring Firebase Auth, role-based
+          access control, and real-time Firestore sync for employee complaint registration and secure
+          pay-slip retrieval.</p>
         <a href="https://github.com/AhmerMoon/POF_E-Services_App/releases/tag/apk" target="_blank"
           class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Download APK</a>
       </div>
@@ -861,23 +865,6 @@
         <p>A machine learning tool using Python to analyze and predict cricket player performance metrics.</p>
         <a href="https://cricket-player-predictor-tyt8dw2aavs5gbprejpupe.streamlit.app/" target="_blank"
           class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Live App</a>
-      </div>
-
-      <div class="glass-card project-card" data-aos="fade-up">
-        <i class="fa-solid fa-gamepad" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-        <h3>Tic Tac Toe</h3>
-        <p>A paper style tic tac toe game built with HTML, CSS, and JavaScript.</p>
-        <a href="https://tictactoe-ahmermoon.vercel.app/" target="_blank" class="btn btn-secondary"
-          style="font-size: 0.85rem; padding: 8px 16px;">Play Game</a>
-      </div>
-
-      <!-- ADD ANOTHER PROJECT CARD OF MOON CURRENCY CONVERTER -->
-      <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="300">
-        <i class="fa-solid fa-coins" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
-        <h3>Moon Currency Converter</h3>
-        <p>A simple currency converter app built with Flutter and Firebase for real-time exchange rate updates.</p>
-        <a href="https://moon-currency-converter.vercel.app/" target="_blank" class="btn btn-secondary"
-          style="font-size: 0.85rem; padding: 8px 16px;">Convert Currency</a>
       </div>
 
       <!-- ADD ANOTHER PROJECT CARD OF ONLINE AUCTION SYSTEM -->
@@ -904,8 +891,9 @@
           <div class="timeline-body">
             <div class="timeline-meta">Aug 2025 - Sep 2025</div>
             <h3>IT Intern @ Pakistan Ordnance Factories (POF)</h3>
-            <p>Developed mobile apps using Flutter with Firebase integration. Built a functional clone of the POF
-              E-Services App employee portal.</p>
+            <p>Delivered a Flutter employee portal with Firebase Auth and real-time Firestore sync, replacing
+              a manual paper-based workflow. Built and shipped a secure pay-slip viewer with role-based
+              access control within a 4-week internship cycle.</p>
             <a href="https://drive.google.com/file/d/14SGkg5XGAk9VnkO-avQ6G9oANiwlSFxz/view?usp=sharing" target="_blank"
               class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
               <i class="fas fa-certificate"></i> View Certificate
@@ -964,8 +952,9 @@
           <div class="timeline-body">
             <div class="timeline-meta">Global Ranking</div>
             <h3>Verified Speedrunner</h3>
-            <p>Officially recognized speedrun records reflecting consistency, precision, and a performance-driven
-              mindset.
+            <p>Holds a verified world record on speedrun.com - ranked globally for precision routing and
+              execution under time pressure. The same systems mindset that goes into a speedrun goes into
+              every deployment.
             </p>
             <a href="https://www.speedrun.com/goiwbf/runs/y8lpl91m" target="_blank" class="btn btn-primary"
               style="font-size: 0.85rem; padding: 8px 16px;">View Run on Speedrun.com</a>
@@ -1052,7 +1041,7 @@
 
     // Initialize Typing Effect
     var typed = new Typed("#typed-text", {
-      strings: ["App Developer.", "AI and ML Engineer.", "DevOps Engineer."],
+      strings: ["Flutter Developer.", "AI Integration Engineer.", "Computer Vision Engineer."],
       typeSpeed: 50,
       backSpeed: 30,
       loop: true,
