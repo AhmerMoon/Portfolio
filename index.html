@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,10 +13,10 @@
     rel="stylesheet" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
   <style>
     /* ================= BASE STYLES ================= */
@@ -188,7 +189,8 @@
     }
 
     .hero-content h1 .gradient-text {
-      text-shadow: 0 0 1px rgba(255, 255, 255, 0.35), 0 0 10px rgba(118, 75, 162, 0.3);
+      text-shadow: 0 0 1px rgba(255, 255, 255, 0.35),
+        0 0 10px rgba(118, 75, 162, 0.3);
       filter: none;
     }
 
@@ -199,7 +201,8 @@
       color: #d9ddff;
       margin-bottom: 30px;
       height: 40px;
-      text-shadow: 0 0 1px rgba(255, 255, 255, 0.3), 0 0 8px rgba(46, 196, 182, 0.2);
+      text-shadow: 0 0 1px rgba(255, 255, 255, 0.3),
+        0 0 8px rgba(46, 196, 182, 0.2);
     }
 
     .hero-image {
@@ -216,7 +219,6 @@
     }
 
     @keyframes floatHero {
-
       0%,
       100% {
         transform: translateY(0);
@@ -287,7 +289,7 @@
       transform: scale(1.1) translateY(-3px);
     }
 
-    /* ================= GLASS CARDS (General) ================= */
+    /* ================= GLASS CARDS ================= */
     .glass-card {
       background: var(--glass-bg);
       backdrop-filter: blur(12px);
@@ -296,7 +298,9 @@
       border-radius: 20px;
       padding: 30px;
       box-shadow: var(--glass-shadow);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
     }
 
     .glass-card:hover {
@@ -420,6 +424,46 @@
       color: var(--text-muted);
       margin-bottom: 20px;
       font-size: 0.95rem;
+    }
+
+    /* ================= NEW: ACADEMY PORTAL PROJECT ================= */
+    .project-card--academy {
+      border-color: rgba(46, 196, 182, 0.35);
+      background: linear-gradient(
+        145deg,
+        rgba(46, 196, 182, 0.09),
+        rgba(20, 24, 48, 0.55)
+      );
+    }
+
+    .project-card--academy .project-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid rgba(46, 196, 182, 0.35);
+      border-radius: 30px;
+      background: rgba(46, 196, 182, 0.1);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+
+    .project-card--academy .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .project-card--academy .project-stack span {
+      padding: 5px 11px;
+      border: 1px solid var(--glass-border);
+      border-radius: 30px;
+      color: #d9ddff;
+      font-size: 0.78rem;
+      background: rgba(255, 255, 255, 0.04);
     }
 
     /* ================= EXPERIENCE & TIMELINE ================= */
@@ -598,7 +642,6 @@
 
     /* ================= RESPONSIVE ================= */
     @media (max-width: 992px) {
-
       .hero,
       .featured-project,
       .contact-container {
@@ -679,8 +722,10 @@
 </head>
 
 <body>
+
   <nav id="navbar">
     <a href="#" class="logo">Ahmer's Portfolio<span class="gradient-text">.</span></a>
+
     <ul id="nav-menu">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
@@ -689,6 +734,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
@@ -698,31 +744,48 @@
 
   <section id="home" class="section-container hero">
     <div class="hero-content" data-aos="fade-right">
+
       <h1>Hi, I'm <span class="gradient-text">Ahmer Moon</span></h1>
+
       <div class="typed-wrapper">
         <span id="typed-text"></span>
       </div>
+
       <p style="color: var(--text-muted); margin-bottom: 30px; line-height: 1.6; max-width: 500px;">
         I build production-ready commercial mobile applications and integrate custom Computer Vision models.
         Specializing in serverless AI architectures and seamless digital experiences.
       </p>
+
       <div class="buttons-group">
-        <a href="https://drive.google.com/file/d/1iOYa-QRlNl3uQ_I8_jY4iuvP3RypoDMH/view?usp=sharing" target="_blank"
-          class="btn btn-primary">
+        <a href="https://drive.google.com/file/d/1iOYa-QRlNl3uQ_I8_jY4iuvP3RypoDMH/view?usp=sharing"
+          target="_blank" class="btn btn-primary">
           <i class="fas fa-file-pdf"></i> Download Resume
         </a>
+
         <a href="https://github.com/AhmerMoon" target="_blank" class="btn btn-secondary">
           <i class="fab fa-github"></i> Visit GitHub
         </a>
       </div>
+
       <div class="social-links">
-        <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/" target="_blank"><i
-            class="fab fa-linkedin"></i></a>
-        <a href="https://www.tiktok.com/@ahmer287" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://www.instagram.com/ahmermoon28/" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@moongamerz826" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@ahmer287" target="_blank">
+          <i class="fab fa-tiktok"></i>
+        </a>
+
+        <a href="https://www.instagram.com/ahmermoon28/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@moongamerz826" target="_blank">
+          <i class="fab fa-youtube"></i>
+        </a>
       </div>
     </div>
+
     <div class="hero-image" data-aos="fade-left">
       <img src="bg.png" alt="Hero Background"
         onerror="this.src='https://cdn3d.iconscout.com/3d/premium/thumb/web-developer-4506461-3730815.png'" />
@@ -732,28 +795,40 @@
   <section id="services" class="section-container">
     <span class="section-subtitle" data-aos="fade-up">What I Do</span>
     <h2 class="section-title gradient-text" data-aos="fade-up">Services Offered</h2>
+
     <div class="services-grid" style="margin-top: 40px;">
 
       <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <div class="service-icon">
+          <i class="fa-solid fa-mobile-screen"></i>
+        </div>
         <h3>Full-Stack App Development</h3>
-        <p>Building responsive, commercial-grade mobile applications from scratch using Flutter and SupaBase, ensuring
-          high performance across devices.</p>
+        <p>
+          Building responsive, commercial-grade mobile applications from scratch using Flutter and SupaBase,
+          ensuring high performance across devices.
+        </p>
       </div>
 
       <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="service-icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
         <h3>AI & Computer Vision Solutions</h3>
-        <p>Training, Integrating and Deploying custom machine learning models (YOLOv8, ResNet-50) directly into
-          production-ready
-          software environments.</p>
+        <p>
+          Training, Integrating and Deploying custom machine learning models (YOLOv8, ResNet-50)
+          directly into production-ready software environments.
+        </p>
       </div>
 
       <div class="glass-card service-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-icon"><i class="fa-solid fa-cloud-bolt"></i></div>
+        <div class="service-icon">
+          <i class="fa-solid fa-cloud-bolt"></i>
+        </div>
         <h3>Serverless Architecture & DevOps</h3>
-        <p>Deploying production AI inference pipelines on serverless GPU infrastructure (Modal, Docker),
-          with FastAPI backends designed for low-latency mobile consumption.</p>
+        <p>
+          Deploying production AI inference pipelines on serverless GPU infrastructure (Modal, Docker),
+          with FastAPI backends designed for low-latency mobile consumption.
+        </p>
       </div>
 
     </div>
@@ -762,6 +837,7 @@
   <section id="tech" class="section-container">
     <span class="section-subtitle" data-aos="fade-up">My Arsenal</span>
     <h2 class="section-title gradient-text" data-aos="fade-up">Tech Stack</h2>
+
     <div class="tech-grid" style="margin-top: 40px;">
 
       <div class="glass-card" data-aos="fade-up" data-aos-delay="100">
@@ -806,17 +882,24 @@
     <span class="section-subtitle" data-aos="fade-up">Selected Work</span>
     <h2 class="section-title gradient-text" data-aos="fade-up">Featured Project</h2>
 
+    <!-- Existing Featured Project: Skinalytics -->
     <div class="glass-card featured-project" data-aos="fade-up"
       style="margin-top: 40px; border-color: rgba(118, 75, 162, 0.4);">
+
       <div class="featured-media">
         <img
           src="https://play-lh.googleusercontent.com/ZIa_ZqIFI1FmWtYkxv7SZYlgl556k649bDh1lQ9CqoPS4JmKUcKSptGJ2D3_AcdmJySRFIGxSKpYOpZKAMB0Dw=w480-h960-rw"
-          alt="Skinalytics Logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3004/3004613.png'" />
+          alt="Skinalytics Logo"
+          onerror="this.src='https://cdn-icons-png.flaticon.com/512/3004/3004613.png'" />
       </div>
+
       <div class="featured-info">
-        <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;">COMMERCIAL
-          APP (MY FINAL YEAR PROJECT)</span>
+        <span style="color: var(--accent); font-size: 0.9rem; font-weight: 600; letter-spacing: 1px;">
+          COMMERCIAL APP (MY FINAL YEAR PROJECT)
+        </span>
+
         <h3>Skinalytics</h3>
+
         <p>
           An AI-powered clinical-grade skincare analysis app, commercially live on the Google Play Store
           and built for Swiss brand <strong>Regeneva</strong>. The backend runs 4 custom models -
@@ -825,55 +908,142 @@
           frontend connects to a serverless FastAPI pipeline, with cold-start latency minimized via a
           /warmup endpoint pre-fired on user login.
         </p>
+
         <div class="featured-actions">
           <a href="https://play.google.com/store/apps/details?id=com.skinalytics.app&pcampaignid=web_share"
             target="_blank" class="btn btn-primary">
             <i class="fab fa-google-play"></i> Get on Play Store
           </a>
-          <a href="https://youtube.com/shorts/DAt0mzh2saU?si=mFyjiaCghsqWB7wO" target="_blank"
-            class="btn btn-secondary">
+
+          <a href="https://youtube.com/shorts/DAt0mzh2saU?si=mFyjiaCghsqWB7wO"
+            target="_blank" class="btn btn-secondary">
             <i class="fab fa-youtube"></i> Watch Demo
           </a>
         </div>
+
       </div>
     </div>
 
-    <h3 style="margin-bottom: 20px; font-size: 1.5rem;" data-aos="fade-up">Other Projects</h3>
+    <h3 style="margin-bottom: 20px; font-size: 1.5rem;" data-aos="fade-up">
+      Other Projects
+    </h3>
+
     <div class="projects-grid">
 
+      <!-- NEW: FG Academy Portal -->
+      <div class="glass-card project-card project-card--academy"
+        data-aos="fade-up" data-aos-delay="50">
+
+        <span class="project-label">
+          <i class="fa-solid fa-circle-check"></i>
+          LIVE WEB PROJECT
+        </span>
+
+        <div style="margin-top: 18px;">
+          <i class="fa-solid fa-graduation-cap"
+            style="font-size: 2rem; color: var(--accent);"></i>
+        </div>
+
+        <h3>FG Academy Portal</h3>
+
+        <p>
+          A Flutter and Supabase-based academy management portal with role-based
+          Admin and Teacher dashboards, batch and student management, daily attendance,
+          test marks and award lists, plus a student Archive &amp; Restore workflow.
+        </p>
+
+        <div class="project-stack" aria-label="Technologies used">
+          <span>Flutter Web</span>
+          <span>Dart</span>
+          <span>Supabase</span>
+          <span>Vercel</span>
+        </div>
+
+        <a href="https://academy-portal-moon.vercel.app/"
+          target="_blank" rel="noopener noreferrer"
+          class="btn btn-primary"
+          style="font-size: 0.85rem; padding: 9px 17px;">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          Live Web App
+        </a>
+
+      </div>
+
+      <!-- Existing: POF E-Services -->
       <div class="glass-card project-card" data-aos="fade-up">
-        <i class="fa-solid fa-building-shield" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <i class="fa-solid fa-building-shield"
+          style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+
         <h3>POF E-Services App</h3>
-        <p>A Flutter mobile portal built during my POF internship, featuring Firebase Auth, role-based
-          access control, and real-time Firestore sync for employee complaint registration and secure
-          pay-slip retrieval.</p>
-        <a href="https://github.com/AhmerMoon/POF_E-Services_App/releases/tag/apk" target="_blank"
-          class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Download APK</a>
+
+        <p>
+          A Flutter mobile portal built during my POF internship, featuring Firebase Auth,
+          role-based access control, and real-time Firestore sync for employee complaint
+          registration and secure pay-slip retrieval.
+        </p>
+
+        <a href="https://github.com/AhmerMoon/POF_E-Services_App/releases/tag/apk"
+          target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">
+          Download APK
+        </a>
       </div>
 
+      <!-- Existing: Medicine Reminder -->
       <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="100">
-        <i class="fa-solid fa-pills" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <i class="fa-solid fa-pills"
+          style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+
         <h3>Medicine Reminder App</h3>
-        <p>A health utility application built with Flutter and Firebase for accurate medication tracking and alerts.</p>
-        <a href="https://github.com/AhmerMoon/Medicine_Reminder_App" target="_blank" class="btn btn-secondary"
-          style="font-size: 0.85rem; padding: 8px 16px;">View Code</a>
+
+        <p>
+          A health utility application built with Flutter and Firebase
+          for accurate medication tracking and alerts.
+        </p>
+
+        <a href="https://github.com/AhmerMoon/Medicine_Reminder_App"
+          target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">
+          View Code
+        </a>
       </div>
 
+      <!-- Existing: Cricket Player Predictor -->
       <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="200">
-        <i class="fa-solid fa-chart-line" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <i class="fa-solid fa-chart-line"
+          style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+
         <h3>Cricket Player Predictor</h3>
-        <p>A machine learning tool using Python to analyze and predict cricket player performance metrics.</p>
-        <a href="https://cricket-player-predictor-tyt8dw2aavs5gbprejpupe.streamlit.app/" target="_blank"
-          class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Live App</a>
+
+        <p>
+          A machine learning tool using Python to analyze and predict
+          cricket player performance metrics.
+        </p>
+
+        <a href="https://cricket-player-predictor-tyt8dw2aavs5gbprejpupe.streamlit.app/"
+          target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">
+          Live App
+        </a>
       </div>
 
-      <!-- ADD ANOTHER PROJECT CARD OF ONLINE AUCTION SYSTEM -->
+      <!-- Existing: Online Auction System -->
       <div class="glass-card project-card" data-aos="fade-up" data-aos-delay="400">
-        <i class="fa-solid fa-gavel" style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+        <i class="fa-solid fa-gavel"
+          style="font-size: 2rem; color: var(--accent); margin-bottom: 15px;"></i>
+
         <h3>Online Auction System</h3>
-        <p>An online auction platform built with Java and GUI for seamless bidding and selling experiences.</p>
-        <a href="https://github.com/AhmerMoon/Online_Auction_System" target="_blank" class="btn btn-secondary"
-          style="font-size: 0.85rem; padding: 8px 16px;">View Code</a>
+
+        <p>
+          An online auction platform built with Java and GUI
+          for seamless bidding and selling experiences.
+        </p>
+
+        <a href="https://github.com/AhmerMoon/Online_Auction_System"
+          target="_blank" class="btn btn-secondary"
+          style="font-size: 0.85rem; padding: 8px 16px;">
+          View Code
+        </a>
       </div>
 
     </div>
@@ -881,26 +1051,38 @@
 
   <section id="experience" class="section-container">
     <span class="section-subtitle" data-aos="fade-up">Journey</span>
-    <h2 class="section-title gradient-text" data-aos="fade-up">Experience & Achievements</h2>
+    <h2 class="section-title gradient-text" data-aos="fade-up">
+      Experience & Achievements
+    </h2>
 
     <div class="timeline" style="margin-top: 40px;">
 
       <div class="timeline-item" data-aos="fade-up">
         <div class="timeline-dot"></div>
+
         <div class="glass-card timeline-content with-logo">
           <div class="timeline-body">
             <div class="timeline-meta">Aug 2025 - Sep 2025</div>
+
             <h3>IT Intern @ Pakistan Ordnance Factories (POF)</h3>
-            <p>Delivered a Flutter employee portal with Firebase Auth and real-time Firestore sync, replacing
-              a manual paper-based workflow. Built and shipped a secure pay-slip viewer with role-based
-              access control within a 4-week internship cycle.</p>
-            <a href="https://drive.google.com/file/d/14SGkg5XGAk9VnkO-avQ6G9oANiwlSFxz/view?usp=sharing" target="_blank"
-              class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">
+
+            <p>
+              Delivered a Flutter employee portal with Firebase Auth and real-time
+              Firestore sync, replacing a manual paper-based workflow.
+              Built and shipped a secure pay-slip viewer with role-based
+              access control within a 4-week internship cycle.
+            </p>
+
+            <a href="https://drive.google.com/file/d/14SGkg5XGAk9VnkO-avQ6G9oANiwlSFxz/view?usp=sharing"
+              target="_blank" class="btn btn-secondary"
+              style="font-size: 0.85rem; padding: 8px 16px;">
               <i class="fas fa-certificate"></i> View Certificate
             </a>
           </div>
+
           <div class="timeline-logo">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIaq4IAzTEhxrZLYFzkkvE3_W7y_lbetDLgA&s"
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIaq4IAzTEhxrZLYFzkkvE3_W7y_lbetDLgA&s"
               alt="POF logo" />
           </div>
         </div>
@@ -908,12 +1090,18 @@
 
       <div class="timeline-item" data-aos="fade-up">
         <div class="timeline-dot"></div>
+
         <div class="glass-card timeline-content with-logo">
           <div class="timeline-body">
             <div class="timeline-meta">2022 - 2026 (Present)</div>
+
             <h3>COMSATS University Islamabad</h3>
-            <p>Bachelor of Science in Computer Science. Current CGPA: 3.79.</p>
+
+            <p>
+              Bachelor of Science in Computer Science. Current CGPA: 3.79.
+            </p>
           </div>
+
           <div class="timeline-logo">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/c/c0/COMSATS_new_logo.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
@@ -924,43 +1112,73 @@
 
       <div class="timeline-item" data-aos="fade-up">
         <div class="timeline-dot"></div>
+
         <div class="glass-card timeline-content with-logo">
           <div class="timeline-body">
             <div class="timeline-meta">Competition Winner</div>
+
             <h3>2x Rubik's Cube Champion</h3>
-            <p>Demonstrated high-speed analytical problem solving under pressure.</p>
+
+            <p>
+              Demonstrated high-speed analytical problem solving under pressure.
+            </p>
+
             <div class="buttons-group" style="margin-bottom: 0;">
               <a href="https://drive.google.com/file/d/1ZRCv-fIhg29N13_mAv9RXnrnel8OEwee/view?usp=sharing"
-                target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate
-                1</a>
+                target="_blank" class="btn btn-secondary"
+                style="font-size: 0.85rem; padding: 8px 16px;">
+                Certificate 1
+              </a>
+
               <a href="https://drive.google.com/file/d/1mCq66f4bvYgklycpHs9arPz4bOTuVDtz/view?usp=sharing"
-                target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Certificate
-                2</a>
+                target="_blank" class="btn btn-secondary"
+                style="font-size: 0.85rem; padding: 8px 16px;">
+                Certificate 2
+              </a>
+
               <a href="https://www.instagram.com/reel/DQ9lhthCNvc/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-                target="_blank" class="btn btn-secondary" style="font-size: 0.85rem; padding: 8px 16px;">Watch Win</a>
+                target="_blank" class="btn btn-secondary"
+                style="font-size: 0.85rem; padding: 8px 16px;">
+                Watch Win
+              </a>
             </div>
           </div>
+
           <div class="timeline-logo">
-            <img src="https://cubezz.com/images/201705/goods_img/4988_P_1493949417803.jpg" alt="Rubik's cube logo" />
+            <img
+              src="https://cubezz.com/images/201705/goods_img/4988_P_1493949417803.jpg"
+              alt="Rubik's cube logo" />
           </div>
         </div>
       </div>
 
       <div class="timeline-item" data-aos="fade-up">
         <div class="timeline-dot"></div>
+
         <div class="glass-card timeline-content with-logo">
           <div class="timeline-body">
             <div class="timeline-meta">Global Ranking</div>
+
             <h3>Verified Speedrunner</h3>
-            <p>Holds a verified world record on speedrun.com - ranked globally for precision routing and
-              execution under time pressure. The same systems mindset that goes into a speedrun goes into
+
+            <p>
+              Holds a verified world record on speedrun.com - ranked globally
+              for precision routing and execution under time pressure.
+              The same systems mindset that goes into a speedrun goes into
               every deployment.
             </p>
-            <a href="https://www.speedrun.com/goiwbf/runs/y8lpl91m" target="_blank" class="btn btn-primary"
-              style="font-size: 0.85rem; padding: 8px 16px;">View Run on Speedrun.com</a>
+
+            <a href="https://www.speedrun.com/goiwbf/runs/y8lpl91m"
+              target="_blank" class="btn btn-primary"
+              style="font-size: 0.85rem; padding: 8px 16px;">
+              View Run on Speedrun.com
+            </a>
           </div>
+
           <div class="timeline-logo">
-            <img src="https://www.speedrun.com/images/logocover.png" alt="Speedrun logo" />
+            <img
+              src="https://www.speedrun.com/images/logocover.png"
+              alt="Speedrun logo" />
           </div>
         </div>
       </div>
@@ -973,17 +1191,38 @@
     <h2 class="section-title gradient-text" data-aos="fade-up">Contact Me</h2>
 
     <div class="glass-card contact-container" data-aos="fade-up" style="margin-top: 40px;">
+
       <div class="contact-info">
-        <h3 style="font-size: 1.5rem; margin-bottom: 20px;">Let's build something great.</h3>
-        <p>If you'd like to work together, discuss AI integrations, or have any questions, feel free to reach out.</p>
-        <p><i class="fa-solid fa-envelope" style="color: var(--accent); margin-right: 10px;"></i>
-          <strong>Email:</strong> <br> <a href="mailto:ahmermoonmajid@gmail.com">ahmermoonmajid@gmail.com</a>
+        <h3 style="font-size: 1.5rem; margin-bottom: 20px;">
+          Let's build something great.
+        </h3>
+
+        <p>
+          If you'd like to work together, discuss AI integrations,
+          or have any questions, feel free to reach out.
         </p>
-        <p><i class="fa-solid fa-phone" style="color: var(--accent); margin-right: 10px;"></i> <strong>Phone:</strong>
-          <br> +92 328 5077511
+
+        <p>
+          <i class="fa-solid fa-envelope"
+            style="color: var(--accent); margin-right: 10px;"></i>
+          <strong>Email:</strong><br>
+          <a href="mailto:ahmermoonmajid@gmail.com">
+            ahmermoonmajid@gmail.com
+          </a>
         </p>
-        <p><i class="fa-solid fa-location-dot" style="color: var(--accent); margin-right: 10px;"></i>
-          <strong>Location:</strong> <br> Wah Cantt, Pakistan
+
+        <p>
+          <i class="fa-solid fa-phone"
+            style="color: var(--accent); margin-right: 10px;"></i>
+          <strong>Phone:</strong><br>
+          +92 328 5077511
+        </p>
+
+        <p>
+          <i class="fa-solid fa-location-dot"
+            style="color: var(--accent); margin-right: 10px;"></i>
+          <strong>Location:</strong><br>
+          Wah Cantt, Pakistan
         </p>
       </div>
 
@@ -991,19 +1230,27 @@
         <input type="text" placeholder="Your Name" required />
         <input type="email" placeholder="Your Email" required />
         <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send
-          Message</button>
+
+        <button type="submit" class="btn btn-primary"
+          style="width: 100%; justify-content: center;">
+          Send Message
+        </button>
       </form>
+
     </div>
   </section>
 
   <footer>
     <div class="footer-grid">
+
       <div class="footer-col">
         <h3>Ahmer Moon</h3>
-        <p>App Developer & AI Specialist. Passionate about building impactful, scalable digital solutions from mobile to
-          cloud.</p>
+        <p>
+          App Developer & AI Specialist. Passionate about building impactful,
+          scalable digital solutions from mobile to cloud.
+        </p>
       </div>
+
       <div class="footer-col">
         <h3>Quick Links</h3>
         <ul>
@@ -1013,16 +1260,28 @@
           <li><a href="#experience">Experience</a></li>
         </ul>
       </div>
+
       <div class="footer-col">
         <h3>Connect</h3>
+
         <div class="social-links">
-          <a href="https://github.com/AhmerMoon" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/" target="_blank"><i
-              class="fab fa-linkedin"></i></a>
-          <a href="https://www.tiktok.com/@ahmer287" target="_blank"><i class="fab fa-tiktok"></i></a>
+          <a href="https://github.com/AhmerMoon" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/ahmer-moon-majid-3754b934a/"
+            target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@ahmer287" target="_blank">
+            <i class="fab fa-tiktok"></i>
+          </a>
         </div>
       </div>
+
     </div>
+
     <div class="footer-bottom">
       &copy; 2026 Ahmer Moon Majid | Built with Passion.
     </div>
@@ -1030,6 +1289,7 @@
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
   <script>
     // Initialize Scroll Animations
     AOS.init({
@@ -1041,7 +1301,11 @@
 
     // Initialize Typing Effect
     var typed = new Typed("#typed-text", {
-      strings: ["Flutter Developer.", "AI Integration Engineer.", "Computer Vision Engineer."],
+      strings: [
+        "Flutter Developer.",
+        "AI Integration Engineer.",
+        "Computer Vision Engineer."
+      ],
       typeSpeed: 50,
       backSpeed: 30,
       loop: true,
@@ -1073,7 +1337,7 @@
       });
     });
 
-    // EmailJS Setup (Kept your original logic)
+    // EmailJS Setup
     (function () {
       emailjs.init("oD1GfMfx9Sw4eKoHQ");
 
@@ -1114,6 +1378,7 @@
       });
     })();
   </script>
+
 </body>
 
 </html>
